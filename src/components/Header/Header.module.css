@@ -1,0 +1,22 @@
+.header {
+  background-color: rgb(29, 29, 29);
+}
+.header__container {
+  color: rgb(255, 255, 255);
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.header__logins {
+  display: flex;
+  align-items: center;
+  gap: 2.5rem;
+}
+
+.container {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 1rem 10rem;
+}

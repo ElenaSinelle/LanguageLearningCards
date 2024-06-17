@@ -1,0 +1,4 @@
+@import "../variables.module.scss";
+@import "../mixins.module.scss";
+
+@include theme($themeGreen);

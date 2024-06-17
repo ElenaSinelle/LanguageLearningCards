@@ -1,0 +1,19 @@
+.cardBox {
+  height: 10rem;
+  max-width: 16rem;
+  flex: 1 1 auto;
+  position: relative;
+}
+.cardBox__cardHolder {
+  position: absolute;
+  width: 100%;
+  height: 45%;
+  bottom: -0.3rem;
+  box-shadow: 0 2px 5px rgba(29, 29, 29, 0.26);
+  z-index: 200;
+  font-weight: 500;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}

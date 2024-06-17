@@ -1,0 +1,43 @@
+@import "../../commonStyles/variables.module.scss";
+@import "../../commonStyles/mixins.module.scss";
+
+.main {
+  background-color: $grayBgColor;
+  &__wrapper {
+    background-color: $lightFontColor;
+    padding: 2rem 3rem;
+
+    .commandArea {
+      display: flex;
+      justify-content: space-between;
+      padding-top: 1.5rem;
+      padding-bottom: 1.5rem;
+
+      &__commandAreaItem {
+        flex: 1 1 auto;
+        text-align: center;
+      }
+
+      &__link {
+        color: $darkBgColor;
+        font-weight: 600;
+      }
+
+      &__link:hover {
+        text-decoration: underline;
+        color: $lightGreenFontColor;
+      }
+    }
+    .timer {
+      text-align: end;
+      padding-bottom: 2rem;
+    }
+  }
+}
+.container {
+  @include container;
+}
+
+.wordsContainer {
+  background-color: $themePink;
+}

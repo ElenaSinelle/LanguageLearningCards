@@ -1,0 +1,17 @@
+.title {
+  background-color: rgba(59, 174, 245, 0.6);
+  color: rgb(232, 233, 235);
+}
+
+.tariff {
+  background-color: rgb(59, 174, 245);
+  color: rgb(232, 233, 235);
+}
+
+.traffic {
+  background-color: rgba(59, 174, 245, 0.2);
+}
+
+.itemFooter {
+  background-color: rgba(59, 174, 245, 0.05);
+}

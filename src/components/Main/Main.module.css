@@ -1,0 +1,39 @@
+.main {
+  background-color: rgb(126, 131, 136);
+}
+.main__wrapper {
+  background-color: rgb(255, 255, 255);
+  padding: 2rem 3rem;
+}
+.main__wrapper .commandArea {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 1.5rem;
+  padding-bottom: 1.5rem;
+}
+.main__wrapper .commandArea__commandAreaItem {
+  flex: 1 1 auto;
+  text-align: center;
+}
+.main__wrapper .commandArea__link {
+  color: rgb(29, 29, 29);
+  font-weight: 600;
+}
+.main__wrapper .commandArea__link:hover {
+  text-decoration: underline;
+  color: rgb(109, 218, 88);
+}
+.main__wrapper .timer {
+  text-align: end;
+  padding-bottom: 2rem;
+}
+
+.container {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 1rem 10rem;
+}
+
+.wordsContainer {
+  background-color: rgba(243, 144, 144, 0.5);
+}

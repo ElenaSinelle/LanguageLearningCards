@@ -1,0 +1,41 @@
+.footer {
+  background-color: rgb(29, 29, 29);
+  padding-top: 5rem;
+  padding-bottom: 8rem;
+}
+.footer__container {
+  color: rgb(255, 255, 255);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.8rem;
+}
+.footer__copyRight {
+  font-size: 0.85rem;
+}
+.footer__line {
+  width: 100%;
+  height: 2px;
+  background-color: rgb(255, 255, 255);
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+.footer__nav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+}
+.footer__btns {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  padding-top: 4.6rem;
+}
+
+.container {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 1rem 10rem;
+}

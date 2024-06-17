@@ -1,0 +1,25 @@
+@import "./variables.module.scss";
+
+@mixin flexAlignment {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin container {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 1rem 10rem;
+}
+
+@mixin theme($theme) {
+  .bg {
+    background-color: $theme;
+    transition: $transition;
+
+    &:hover,
+    &:active {
+      background-color: fade-in($theme, 0.5);
+    }
+  }
+}

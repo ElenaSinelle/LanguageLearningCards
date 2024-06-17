@@ -1,0 +1,25 @@
+@import "../../commonStyles/variables.module.scss";
+@import "../../commonStyles/mixins.module.scss";
+
+.header {
+  background-color: $darkBgColor;
+
+  &__container {
+    color: $lightFontColor;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  &__logins {
+    display: flex;
+    align-items: center;
+    gap: 2.5rem;
+  }
+}
+
+.container {
+  @include container;
+}

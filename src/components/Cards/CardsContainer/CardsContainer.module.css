@@ -1,0 +1,46 @@
+.cardsContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  padding-bottom: 2rem;
+}
+.cardsContainer__currentCardContainer {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 5fr 1fr;
+  grid-template-areas: "prev card next" ". pagination .";
+  gap: 2rem;
+  align-items: center;
+}
+.cardsContainer__card {
+  grid-area: card;
+}
+.cardsContainer__prev {
+  grid-area: prev;
+}
+.cardsContainer__next {
+  grid-area: next;
+}
+.cardsContainer__pagination {
+  grid-area: pagination;
+  justify-self: center;
+  color: rgb(29, 29, 29);
+  font-weight: 600;
+}
+.cardsContainer__pagination_num {
+  color: rgb(77, 160, 60);
+  font-size: larger;
+}
+.cardsContainer .errorMessage {
+  text-align: center;
+  font-weight: 600;
+  font-size: larger;
+  color: #f39090;
+}
+.cardsContainer__cardsBox {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+}
