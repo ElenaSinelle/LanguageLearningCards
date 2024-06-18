@@ -1,7 +1,6 @@
 import React from "react";
 import styles from "./Header.module.scss";
 import Logo from "../Logo/Logo";
-import PlainLink from "../Links/PlainLink/PlainLink";
 import Search from "../Inputs/Search";
 
 export default function Header() {
@@ -12,9 +11,8 @@ export default function Header() {
         <div className={styles.header__logins}>
           <Search />
 
-          <PlainLink href="./." contents="Log In" />
-
-          <PlainLink href="./." contents="Sign Up" />
+          <a href="./."> contents="Log In"</a>
+          <a href="./."> contents="Sign Up" </a>
         </div>
       </div>
     </header>
