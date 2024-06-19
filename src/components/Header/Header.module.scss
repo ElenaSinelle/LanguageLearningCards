@@ -19,15 +19,7 @@
     gap: 2.5rem;
 
     &_link {
-      color: $lightFontColor;
-      text-decoration: none;
-      font-weight: bolder;
-      transition: $transition;
-
-      &:hover,
-      &:active {
-        @include onHover;
-      }
+      @include navLink;
     }
   }
 }
