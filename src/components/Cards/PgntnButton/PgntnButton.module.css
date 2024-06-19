@@ -1,0 +1,26 @@
+.pgntnButton {
+  padding: 0.3rem 1rem;
+  border: transparent;
+  border-radius: 0.2rem;
+  outline: none;
+  background-color: rgb(90, 182, 181);
+  color: rgba(255, 255, 255, 0.792);
+  min-width: 7rem;
+  font-size: 1rem;
+  font-weight: bolder;
+  transition: all ease 0.5s;
+  cursor: pointer;
+  background-color: rgba(133, 243, 94, 0.5);
+  color: rgb(0, 0, 0);
+  font-weight: bolder;
+  text-align: center;
+  font-size: 1.3rem;
+  padding: 0.7rem 1.5rem;
+}
+.pgntnButton:hover, .pgntnButton:active {
+  color: rgb(0, 0, 0);
+  transform: scale(0.97);
+}
+.pgntnButton:hover {
+  background-color: #85f35e;
+}

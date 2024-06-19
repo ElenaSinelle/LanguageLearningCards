@@ -19,6 +19,7 @@
   outline: none;
   background-color: rgb(90, 182, 181);
   color: rgba(255, 255, 255, 0.792);
+  min-width: 7rem;
   font-size: 1rem;
   font-weight: bolder;
   transition: all ease 0.5s;

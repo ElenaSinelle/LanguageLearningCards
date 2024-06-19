@@ -1,0 +1,67 @@
+.card {
+  width: 30rem;
+  height: 20rem;
+  box-shadow: 0 2px 5px #919191;
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr 5fr 3fr;
+  grid-template-areas: "cardTitle" "term" "translation";
+}
+.card__cardTitle {
+  grid-area: cardTitle;
+  text-align: center;
+  padding-top: 0.7rem;
+}
+.card__readCardBtn {
+  position: absolute;
+  right: 0.5rem;
+  top: 0.5rem;
+  width: 1.2rem;
+  height: auto;
+  cursor: pointer;
+}
+.card__term {
+  grid-area: term;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 3rem;
+  font-weight: 600;
+  color: rgb(5, 94, 124);
+}
+.card__showTranslation {
+  grid-area: translation;
+  padding: 0.3rem 1rem;
+  border: transparent;
+  border-radius: 0.2rem;
+  outline: none;
+  background-color: rgb(90, 182, 181);
+  color: rgba(255, 255, 255, 0.792);
+  min-width: 7rem;
+  font-size: 1rem;
+  font-weight: bolder;
+  transition: all ease 0.5s;
+  cursor: pointer;
+  height: min-content;
+  justify-self: center;
+  font-size: 1.3rem;
+  max-width: 60%;
+  padding: 0.7rem 1.5rem;
+}
+.card__showTranslation:hover, .card__showTranslation:active {
+  color: rgb(0, 0, 0);
+  transform: scale(0.97);
+}
+.card__translation {
+  grid-area: translation;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  justify-self: center;
+  max-width: 60%;
+  font-size: 1.5rem;
+  height: min-content;
+  padding-top: 0.7rem;
+  color: rgb(90, 182, 181);
+}

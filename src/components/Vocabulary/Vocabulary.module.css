@@ -9,11 +9,11 @@
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  padding-top: 2rem;
+  gap: 1.5rem;
   padding-bottom: 2rem;
 }
 .vocab__title {
-  padding-bottom: 1rem;
+  color: rgb(90, 182, 181);
 }
 .vocab__container {
   display: grid;
@@ -45,9 +45,10 @@
   gap: 0.4rem;
 }
 .vocab__btn {
+  padding: 0.3rem 1rem;
+  border: transparent;
+  border-radius: 0.1rem;
   outline: none;
-  padding: 0.3rem;
   cursor: pointer;
-  border: 1px solid transparent;
-  border-radius: 0.2rem;
+  min-width: 6rem;
 }

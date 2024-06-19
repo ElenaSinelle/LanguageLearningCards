@@ -22,6 +22,10 @@
   font-style: normal;
   font-display: swap;
 }
+html {
+  overflow-y: scroll;
+}
+
 * {
   margin: 0;
   box-sizing: border-box;
@@ -30,4 +34,10 @@
 body {
   font: 300 normal 18px/22px Lato, sans-serif;
   color: rgb(0, 0, 0);
+}
+
+.wrapper {
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  min-height: 100vh;
 }

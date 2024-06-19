@@ -1,10 +1,10 @@
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import styles from "./commonStyles/index.module.scss";
 import Header from "./components/Header/Header";
 import Footer from "./components/Footer/Footer";
-
 import Home from "./pages/Home";
 import Login from "./pages/Login";
-import Contacts from "./pages/Contacts";
+import Contacts from "./pages/Contacts/Contacts";
 import Cards from "./pages/Cards";
 import Card from "./pages/Card";
 import Vocabulary from "./pages/Vocabulary";
@@ -13,11 +13,11 @@ import { Context } from "./Context";
 
 export default function App() {
   return (
-    <>
+    <div className={styles.wrapper}>
       <Router basename="/LanguageLearningCards">
         <Header />
         <Context>
-          <main className="container" style={{ minHeight: "100vh" }}>
+          <main>
             <Routes>
               <Route path="/" element={<Home />} />
               <Route path="/login" element={<Login />} />
@@ -31,6 +31,6 @@ export default function App() {
         </Context>
         <Footer />
       </Router>
-    </>
+    </div>
   );
 }

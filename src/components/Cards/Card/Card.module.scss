@@ -1,0 +1,60 @@
+@import "../../../commonStyles/variables.module.scss";
+@import "../../../commonStyles/mixins.module.scss";
+
+.card {
+  width: 30rem;
+  height: 20rem;
+  box-shadow: $box-shadow;
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr 5fr 3fr;
+  grid-template-areas:
+    "cardTitle"
+    "term"
+    "translation";
+
+  &__cardTitle {
+    grid-area: cardTitle;
+    text-align: center;
+    padding-top: 0.7rem;
+  }
+
+  &__readCardBtn {
+    position: absolute;
+    right: 0.5rem;
+    top: 0.5rem;
+    width: 1.2rem;
+    height: auto;
+    cursor: pointer;
+  }
+
+  &__term {
+    grid-area: term;
+    @include flexAlignment;
+    font-size: 3rem;
+    font-weight: 600;
+    color: $darkBgColor;
+  }
+
+  &__showTranslation {
+    grid-area: translation;
+    @include button;
+    height: min-content;
+    justify-self: center;
+    font-size: 1.3rem;
+    max-width: 60%;
+    padding: 0.7rem 1.5rem;
+  }
+
+  &__translation {
+    grid-area: translation;
+    @include flexAlignment;
+    justify-self: center;
+    max-width: 60%;
+    font-size: 1.5rem;
+    height: min-content;
+    padding-top: 0.7rem;
+    color: $lightBlueColor;
+  }
+}

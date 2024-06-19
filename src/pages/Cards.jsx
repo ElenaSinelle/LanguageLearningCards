@@ -1,3 +1,5 @@
-export default function Cards() {
-  return <h1>It's Cards </h1>;
+import CardsContainer from "../components/Cards/CardsContainer/CardsContainer";
+
+export default function Card() {
+  return <CardsContainer />;
 }

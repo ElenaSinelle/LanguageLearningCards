@@ -1,0 +1,26 @@
+@import "../../commonStyles/variables.module.scss";
+@import "../../commonStyles/mixins.module.scss";
+
+.container {
+  @include container;
+}
+
+.contacts {
+  padding-top: 2rem;
+  @include flexAlignment;
+  flex-direction: column;
+  gap: 2rem;
+
+  &__title {
+    & a {
+      color: $lightBlueColor;
+      cursor: pointer;
+      text-decoration: none;
+    }
+  }
+
+  &__btns {
+    @include flexAlignment;
+    gap: 2rem;
+  }
+}

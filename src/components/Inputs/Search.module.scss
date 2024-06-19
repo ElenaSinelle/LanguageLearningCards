@@ -12,17 +12,6 @@
   }
 
   &__btn {
-    @include borderRounded;
-    background-color: $lightBlueColor;
-    color: $lightFontColor;
-    font-size: 1rem;
-    font-weight: bolder;
-    transition: $transition;
-    cursor: pointer;
-
-    &:hover,
-    &:active {
-      @include onHover;
-    }
+    @include button;
   }
 }

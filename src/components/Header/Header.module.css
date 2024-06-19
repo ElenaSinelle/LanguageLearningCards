@@ -2,6 +2,7 @@
   background-color: rgb(5, 94, 124);
   position: sticky;
   top: 0;
+  z-index: 5;
 }
 .header__container {
   padding-top: 1rem;
@@ -17,7 +18,7 @@
   gap: 2.5rem;
 }
 .header__nav_link {
-  color: rgb(255, 255, 255);
+  color: rgba(255, 255, 255, 0.792);
   text-decoration: none;
   font-weight: bolder;
   transition: all ease 0.5s;

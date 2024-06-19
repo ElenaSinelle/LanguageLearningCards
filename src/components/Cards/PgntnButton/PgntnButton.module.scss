@@ -1,0 +1,16 @@
+@import "../../../commonStyles/variables.module.scss";
+@import "../../../commonStyles/mixins.module.scss";
+
+.pgntnButton {
+  @include button;
+  background-color: $themeGreen;
+  color: $darkFontColor;
+  font-weight: bolder;
+  text-align: center;
+  font-size: 1.3rem;
+  padding: 0.7rem 1.5rem;
+
+  &:hover {
+    background-color: fade-in($themeGreen, 0.5);
+  }
+}

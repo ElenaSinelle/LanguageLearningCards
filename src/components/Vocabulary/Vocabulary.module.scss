@@ -8,11 +8,12 @@
 .vocab {
   @include flexAlignment;
   flex-direction: column;
-  padding-top: 2rem;
+  gap: 1.5rem;
+
   padding-bottom: 2rem;
 
   &__title {
-    padding-bottom: 1rem;
+    color: $lightBlueColor;
   }
 
   &__container {
@@ -51,10 +52,6 @@
   }
 
   &__btn {
-    outline: none;
-    padding: 0.3rem;
-    cursor: pointer;
-    border: 1px solid transparent;
-    border-radius: 0.2rem;
+    @include tableButton;
   }
 }

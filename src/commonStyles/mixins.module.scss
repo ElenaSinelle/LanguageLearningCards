@@ -47,3 +47,25 @@
     @include onHover;
   }
 }
+
+@mixin button {
+  @include borderRounded;
+  background-color: $lightBlueColor;
+  color: $lightFontColor;
+  min-width: 7rem;
+  font-size: 1rem;
+  font-weight: bolder;
+  transition: $transition;
+  cursor: pointer;
+
+  &:hover,
+  &:active {
+    @include onHover;
+  }
+}
+
+@mixin tableButton {
+  @include borderRounded;
+  cursor: pointer;
+  min-width: 6rem;
+}
