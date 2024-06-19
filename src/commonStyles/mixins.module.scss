@@ -9,7 +9,7 @@
 @mixin container {
   max-width: 1440px;
   margin: 0 auto;
-  padding: 1rem 10rem;
+  padding: 0.5rem 5rem;
 }
 
 @mixin theme($theme) {
@@ -22,4 +22,16 @@
       background-color: fade-in($theme, 0.5);
     }
   }
+}
+
+@mixin borderRounded {
+  padding: 0.3rem 1rem;
+  border: transparent;
+  border-radius: $borderRadius;
+  outline: none;
+}
+
+@mixin onHover {
+  color: $darkFontColor;
+  transform: scale(0.97);
 }

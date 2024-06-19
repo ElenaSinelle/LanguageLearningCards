@@ -1,0 +1,28 @@
+.search {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+.search__input {
+  width: 20rem;
+  padding: 0.3rem 1rem;
+  border: transparent;
+  border-radius: 0.1rem;
+  outline: none;
+}
+.search__btn {
+  padding: 0.3rem 1rem;
+  border: transparent;
+  border-radius: 0.1rem;
+  outline: none;
+  background-color: rgb(90, 182, 181);
+  color: rgb(255, 255, 255);
+  font-weight: bolder;
+  transition: all ease 0.5s;
+  cursor: pointer;
+}
+.search__btn:hover, .search__btn:active {
+  color: rgb(0, 0, 0);
+  transform: scale(0.97);
+}

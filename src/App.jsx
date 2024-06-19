@@ -15,7 +15,7 @@ export default function App() {
     <>
       <Router basename="/LanguageLearningCards">
         <Header />
-        <main className="container content">
+        <main className="container" style={{ minHeight: "100vh" }}>
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/login" element={<Login />} />

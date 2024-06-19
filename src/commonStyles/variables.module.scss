@@ -1,15 +1,19 @@
-$darkBgColor: rgb(29, 29, 29);
-$grayBgColor: rgb(126, 131, 136);
+$darkBgColor: rgb(5, 94, 124);
+$grayBgColor: rgb(167, 169, 171);
 $darkFontColor: rgb(0, 0, 0);
 $lightFontColor: rgb(255, 255, 255);
-$lightGreenFontColor: rgb(109, 218, 88);
-$darkGreenColor: rgb(77, 160, 60);
+$lightBlueColor: rgb(90, 182, 181);
+$darkBlueColor: rgb(43, 113, 112);
 
 $themePink: rgba(243, 144, 144, 0.5);
-$themeBlue: rgba(110, 201, 239, 0.5);
+$themeBlue: rgba(90, 182, 181, 0.5);
 $themeGreen: rgba(133, 243, 94, 0.5);
 
 $transition: all ease 0.5s;
 $transformScale: scale(0.97);
 
+$borderRadius: 0.1rem;
+
 $box-shadow: 0 2px 5px rgba($darkBgColor, 0.26);
+
+// rgb(109, 218, 88);

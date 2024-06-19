@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import styles from "./Header.module.scss";
 import Logo from "../Logo/Logo";
 import Search from "../Inputs/Search";
@@ -8,12 +9,22 @@ export default function Header() {
     <header className={styles.header}>
       <div className={`${styles.container} ${styles.header__container}`}>
         <Logo />
-        <div className={styles.header__logins}>
+        <nav className={styles.header__nav}>
           <Search />
 
-          <a href="./."> contents="Log In"</a>
-          <a href="./."> contents="Sign Up" </a>
-        </div>
+          <Link className={styles.header__nav_link} to="/login">
+            Login
+          </Link>
+          <Link className={styles.header__nav_link} to="/cards">
+            Cards
+          </Link>
+          <Link className={styles.header__nav_link} to="/vocabulary">
+            Vocabulary
+          </Link>
+          <Link className={styles.header__nav_link} to="/contacts">
+            Contacts
+          </Link>
+        </nav>
       </div>
     </header>
   );

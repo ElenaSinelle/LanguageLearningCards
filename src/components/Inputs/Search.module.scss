@@ -1,0 +1,26 @@
+@import "../../commonStyles/variables.module.scss";
+@import "../../commonStyles/mixins.module.scss";
+
+.search {
+  @include flexAlignment;
+  gap: 1rem;
+
+  &__input {
+    width: 20rem;
+    @include borderRounded;
+  }
+
+  &__btn {
+    @include borderRounded;
+    background-color: $lightBlueColor;
+    color: $lightFontColor;
+    font-weight: bolder;
+    transition: $transition;
+    cursor: pointer;
+
+    &:hover,
+    &:active {
+      @include onHover;
+    }
+  }
+}
