@@ -9,23 +9,26 @@ import Cards from "./pages/Cards";
 import Card from "./pages/Card";
 import Vocabulary from "./pages/Vocabulary";
 import NotFound from "./pages/NotFound";
+import { Context } from "./Context";
 
 export default function App() {
   return (
     <>
       <Router basename="/LanguageLearningCards">
         <Header />
-        <main className="container" style={{ minHeight: "100vh" }}>
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/login" element={<Login />} />
-            <Route path="/contacts" element={<Contacts />} />
-            <Route path="/cards" element={<Cards />} />
-            <Route path="/cards/:id" element={<Card />} />
-            <Route path="/vocabulary" element={<Vocabulary />} />
-            <Route path="*" element={<NotFound />} />
-          </Routes>
-        </main>
+        <Context>
+          <main className="container" style={{ minHeight: "100vh" }}>
+            <Routes>
+              <Route path="/" element={<Home />} />
+              <Route path="/login" element={<Login />} />
+              <Route path="/contacts" element={<Contacts />} />
+              <Route path="/cards" element={<Cards />} />
+              <Route path="/cards/:id" element={<Card />} />
+              <Route path="/vocabulary" element={<Vocabulary />} />
+              <Route path="*" element={<NotFound />} />
+            </Routes>
+          </main>
+        </Context>
         <Footer />
       </Router>
     </>

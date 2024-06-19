@@ -1,3 +1,5 @@
+import VocabularyComponent from "../components/Vocabulary/VocabularyComponent";
+
 export default function Vocabulary() {
-  return <h1>It's Vocabulary </h1>;
+  return <VocabularyComponent />;
 }

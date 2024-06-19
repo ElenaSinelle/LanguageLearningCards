@@ -10,6 +10,7 @@
   border: transparent;
   border-radius: 0.1rem;
   outline: none;
+  font-size: 1rem;
 }
 .search__btn {
   padding: 0.3rem 1rem;
@@ -17,7 +18,8 @@
   border-radius: 0.1rem;
   outline: none;
   background-color: rgb(90, 182, 181);
-  color: rgb(255, 255, 255);
+  color: rgba(255, 255, 255, 0.792);
+  font-size: 1rem;
   font-weight: bolder;
   transition: all ease 0.5s;
   cursor: pointer;

@@ -1,0 +1,60 @@
+@import "../../commonStyles/variables.module.scss";
+@import "../../commonStyles/mixins.module.scss";
+
+.container {
+  @include container;
+}
+
+.vocab {
+  @include flexAlignment;
+  flex-direction: column;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+
+  &__title {
+    padding-bottom: 1rem;
+  }
+
+  &__container {
+    display: grid;
+    width: 100%;
+    grid-template-columns: 1fr;
+    grid-auto-rows: 1fr;
+    box-shadow: $box-shadow;
+  }
+
+  &__line {
+    display: grid;
+    grid-template-columns: 3fr 1.3fr;
+    padding: 0.3rem;
+
+    &:nth-child(2n + 1) {
+      background-color: rgba($grayBgColor, 0.3);
+    }
+  }
+
+  &__itemContainer {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    align-items: center;
+    padding: 0.3rem;
+  }
+
+  &__headerItem {
+    font-weight: 700;
+  }
+
+  &__btnsContainer {
+    display: flex;
+    justify-content: flex-end;
+    gap: 0.4rem;
+  }
+
+  &__btn {
+    outline: none;
+    padding: 0.3rem;
+    cursor: pointer;
+    border: 1px solid transparent;
+    border-radius: 0.2rem;
+  }
+}

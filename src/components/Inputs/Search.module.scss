@@ -8,12 +8,14 @@
   &__input {
     width: 20rem;
     @include borderRounded;
+    font-size: 1rem;
   }
 
   &__btn {
     @include borderRounded;
     background-color: $lightBlueColor;
     color: $lightFontColor;
+    font-size: 1rem;
     font-weight: bolder;
     transition: $transition;
     cursor: pointer;

@@ -1,0 +1,53 @@
+.container {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0.5rem 5rem;
+}
+
+.vocab {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
+.vocab__title {
+  padding-bottom: 1rem;
+}
+.vocab__container {
+  display: grid;
+  width: 100%;
+  grid-template-columns: 1fr;
+  grid-auto-rows: 1fr;
+  box-shadow: 0 2px 5px rgba(5, 94, 124, 0.26);
+}
+.vocab__line {
+  display: grid;
+  grid-template-columns: 3fr 1.3fr;
+  padding: 0.3rem;
+}
+.vocab__line:nth-child(2n+1) {
+  background-color: rgba(167, 169, 171, 0.3);
+}
+.vocab__itemContainer {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  align-items: center;
+  padding: 0.3rem;
+}
+.vocab__headerItem {
+  font-weight: 700;
+}
+.vocab__btnsContainer {
+  display: flex;
+  justify-content: flex-end;
+  gap: 0.4rem;
+}
+.vocab__btn {
+  outline: none;
+  padding: 0.3rem;
+  cursor: pointer;
+  border: 1px solid transparent;
+  border-radius: 0.2rem;
+}

@@ -9,16 +9,7 @@ export default function Search() {
         id="search-field"
         placeholder="Search"
       />
-      <button
-        className={styles.search__btn}
-        // style={{
-        //   position: "absolute",
-        //   top: 0,
-        //   right: 0,
-        // }}
-      >
-        Search
-      </button>
+      <button className={styles.search__btn}>Search</button>
     </div>
   );
 }
