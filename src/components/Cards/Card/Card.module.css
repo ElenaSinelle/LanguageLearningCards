@@ -29,6 +29,15 @@
   font-size: 3rem;
   font-weight: 600;
   color: rgb(5, 94, 124);
+  text-decoration: none;
+  transition: all ease 0.5s;
+}
+.card__term * {
+  text-decoration: none;
+  color: inherit;
+}
+.card__term:hover {
+  color: rgba(133, 243, 94, 0.5);
 }
 .card__showTranslation {
   grid-area: translation;
@@ -51,7 +60,7 @@
 }
 .card__showTranslation:hover, .card__showTranslation:active {
   color: rgb(0, 0, 0);
-  transform: scale(0.97);
+  transform: scale(1.08);
 }
 .card__translation {
   grid-area: translation;

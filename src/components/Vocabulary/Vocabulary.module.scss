@@ -39,6 +39,14 @@
     grid-template-columns: repeat(3, 1fr);
     align-items: center;
     padding: 0.3rem;
+    text-decoration: none;
+    color: $darkFontColor;
+    transition: $transition;
+
+    &:hover {
+      color: $lightBlueColor;
+      font-weight: bolder;
+    }
   }
 
   &__headerItem {

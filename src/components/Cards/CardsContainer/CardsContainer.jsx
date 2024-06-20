@@ -39,7 +39,7 @@ export default function CardsContainer() {
             : terms.map((term, index) => (
                 <Card
                   key={term.english}
-                  id={term.english}
+                  id={term.id}
                   className={styles.cardsContainer__card}
                   term={term}
                   isVisible={index === currentTerm}

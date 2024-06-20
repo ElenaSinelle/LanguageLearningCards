@@ -35,6 +35,17 @@
     font-size: 3rem;
     font-weight: 600;
     color: $darkBgColor;
+    text-decoration: none;
+    transition: $transition;
+
+    & * {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    &:hover {
+      color: $themeGreen;
+    }
   }
 
   &__showTranslation {

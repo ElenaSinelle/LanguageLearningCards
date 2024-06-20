@@ -1,4 +1,5 @@
 import React, { useState, useContext, useEffect } from "react";
+import { Link } from "react-router-dom";
 import { CustomContext } from "../../../Context";
 import VocabButton from "../VocabButton/VocabButton";
 import VocabInput from "../VocabInput/VocabInput";
@@ -10,7 +11,7 @@ import themeGreen from "../../../commonStyles/themes/themeGreen.module.scss";
 const themes = [themePink, themeBlue, themeGreen];
 
 export default function VocabItem(props) {
-  const { english, transcription, russian } = props;
+  const { id, english, transcription, russian } = props;
   const { updateTerm, removeTerm } = useContext(CustomContext);
   const [editing, setEditing] = useState(false);
 
@@ -52,16 +53,16 @@ export default function VocabItem(props) {
 
   // inputs in view mode
   const renderViewModeInputs = () => (
-    <>
+    <Link to={`../cards/${id}`} className={styles.vocab__itemContainer}>
       <div>{savedTerm.english}</div>
       <div>{savedTerm.transcription}</div>
       <div>{savedTerm.russian}</div>
-    </>
+    </Link>
   );
 
   //inputs in editing mode
   const renderEditModeInputs = () => (
-    <>
+    <div className={styles.vocab__itemContainer}>
       <VocabInput
         defaultValue={tempTerm.english}
         onChange={(e) => setTempTerm({ ...tempTerm, english: e.target.value })}
@@ -76,7 +77,7 @@ export default function VocabItem(props) {
         defaultValue={tempTerm.russian}
         onChange={(e) => setTempTerm({ ...tempTerm, russian: e.target.value })}
       />
-    </>
+    </div>
   );
 
   // buttons in view mode
@@ -107,9 +108,7 @@ export default function VocabItem(props) {
 
   return (
     <div className={styles.vocab__line}>
-      <div className={styles.vocab__itemContainer}>
-        {!editing ? renderViewModeInputs() : renderEditModeInputs()}
-      </div>
+      <div>{!editing ? renderViewModeInputs() : renderEditModeInputs()}</div>
 
       <div className={styles.vocab__btnsContainer}>
         {!editing ? renderViewModeButtons() : renderEditModeButtons()}

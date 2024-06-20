@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import audio from "../../../images/icons/audio.svg";
 
 import styles from "./Card.module.scss";
@@ -22,7 +23,9 @@ export default function Card({ term, id, isVisible }) {
         src={audio}
         alt="read card button"
       />{" "}
-      <div className={styles.card__term}>{term.english}</div>
+      <Link to={`/cards/${id}`} className={styles.card__term}>
+        {term.english}
+      </Link>
       {!translated ? (
         <button
           className={styles.card__showTranslation}
