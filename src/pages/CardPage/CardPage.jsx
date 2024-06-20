@@ -2,6 +2,10 @@ import { useParams } from "react-router-dom";
 import { useState, useEffect, useContext } from "react";
 import { CustomContext } from "../../Context";
 import styles from "./CardPage.module.scss";
+import {
+  GoBackButton,
+  GoHomeButton,
+} from "../../components/NavigateButtons/NavigateButtons";
 
 export default function CardPage() {
   const { id } = useParams();
@@ -26,11 +30,13 @@ export default function CardPage() {
 
   return (
     <div className={styles.container}>
+      <GoBackButton />
       <h2>Details of word "{term.english}"</h2>
       <p>English: {term.english}</p>
       <p>Transcription: {term.transcription}</p>
       <p>Translation into Russian: {term.russian}</p>
       <p>The word belongs to the category: {term.tags}</p>
+      <GoHomeButton />
     </div>
   );
 }

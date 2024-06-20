@@ -2,7 +2,6 @@
   width: 30rem;
   height: 20rem;
   box-shadow: 0 2px 5px #919191;
-  position: relative;
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: 1fr 5fr 3fr;
@@ -12,14 +11,6 @@
   grid-area: cardTitle;
   text-align: center;
   padding-top: 0.7rem;
-}
-.card__readCardBtn {
-  position: absolute;
-  right: 0.5rem;
-  top: 0.5rem;
-  width: 1.2rem;
-  height: auto;
-  cursor: pointer;
 }
 .card__term {
   grid-area: term;
@@ -60,7 +51,7 @@
 }
 .card__showTranslation:hover, .card__showTranslation:active {
   color: rgb(0, 0, 0);
-  transform: scale(1.08);
+  transform: scale(1.02);
 }
 .card__translation {
   grid-area: translation;

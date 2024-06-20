@@ -18,11 +18,7 @@ export default function Card({ term, id, isVisible }) {
   return (
     <div id={id} className={styles.card}>
       <h4 className={styles.card__cardTitle}>Term</h4>
-      <img
-        className={styles.card__readCardBtn}
-        src={audio}
-        alt="read card button"
-      />{" "}
+
       <Link to={`/cards/${id}`} className={styles.card__term}>
         {term.english}
       </Link>
