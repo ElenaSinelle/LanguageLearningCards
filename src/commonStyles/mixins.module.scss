@@ -33,7 +33,7 @@
 
 @mixin onHover {
   color: $darkFontColor;
-  transform: scale(0.97);
+  transform: scale(1.08);
 }
 
 @mixin navLink {
@@ -41,11 +41,6 @@
   text-decoration: none;
   font-weight: bolder;
   transition: $transition;
-
-  &:hover,
-  &:active {
-    @include onHover;
-  }
 }
 
 @mixin button {

@@ -9,8 +9,7 @@
   @include flexAlignment;
   flex-direction: column;
   gap: 2rem;
-  padding-top: 2rem;
-  padding-bottom: 2rem;
+  padding-top: 1rem;
 
   &__currentCardContainer {
     display: grid;

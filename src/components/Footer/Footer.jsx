@@ -1,10 +1,15 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import Logo from "../Logo/Logo";
 
 import styles from "./Footer.module.scss";
 
 import { navItems } from "../../navItems";
+
+const setActiveLink = ({ isActive }) =>
+  isActive
+    ? `${styles.footer__nav_link} ${styles.footer__nav_link_active}`
+    : `${styles.footer__nav_link}`;
 
 export default function Footer() {
   return (
@@ -14,9 +19,9 @@ export default function Footer() {
         <div className={styles.footer__line}></div>
         <ul className={styles.footer__nav}>
           {navItems.map((item) => (
-            <Link to={item[1]} className={styles.footer__nav_link}>
+            <NavLink to={item[1]} className={setActiveLink}>
               {item[0]}
-            </Link>
+            </NavLink>
           ))}
         </ul>
       </div>

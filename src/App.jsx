@@ -1,36 +1,27 @@
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-import styles from "./commonStyles/index.module.scss";
-import Header from "./components/Header/Header";
-import Footer from "./components/Footer/Footer";
-import Home from "./pages/Home";
-import Login from "./pages/Login";
-import Contacts from "./pages/Contacts/Contacts";
-import Cards from "./pages/Cards";
-import Card from "./pages/Card";
-import Vocabulary from "./pages/Vocabulary";
-import NotFound from "./pages/NotFound";
-import { Context } from "./Context";
+import { Layout } from "./components/Layout/Layout";
+import HomePage from "./pages/HomePage/HomePage";
+import LoginPage from "./pages/LoginPage/LoginPage";
+import ContactsPage from "./pages/ContactsPage/ContactsPage";
+import CardsPage from "./pages/CardsPage/CardsPage";
+import CardPage from "./pages/CardPage/CardPage";
+import VocabularyPage from "./pages/VocabularyPage/VocabularyPage";
+import NotFoundPage from "./pages/NotFoundPage/NotFoundPage";
 
 export default function App() {
   return (
-    <div className={styles.wrapper}>
-      <Router basename="/LanguageLearningCards">
-        <Header />
-        <Context>
-          <main>
-            <Routes>
-              <Route path="/" element={<Home />} />
-              <Route path="/login" element={<Login />} />
-              <Route path="/contacts" element={<Contacts />} />
-              <Route path="/cards" element={<Cards />} />
-              <Route path="/cards/:id" element={<Card />} />
-              <Route path="/vocabulary" element={<Vocabulary />} />
-              <Route path="*" element={<NotFound />} />
-            </Routes>
-          </main>
-        </Context>
-        <Footer />
-      </Router>
-    </div>
+    <Router basename="/LanguageLearningCards">
+      <Routes>
+        <Route path="/" element={<Layout />}>
+          <Route index element={<HomePage />} />
+          <Route path="login" element={<LoginPage />} />
+          <Route path="contacts" element={<ContactsPage />} />
+          <Route path="cards" element={<CardsPage />} />
+          <Route path="cards/:id" element={<CardPage />} />
+          <Route path="vocabulary" element={<VocabularyPage />} />
+          <Route path="*" element={<NotFoundPage />} />
+        </Route>
+      </Routes>
+    </Router>
   );
 }

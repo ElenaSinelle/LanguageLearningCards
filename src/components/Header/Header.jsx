@@ -1,9 +1,14 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import styles from "./Header.module.scss";
 import Logo from "../Logo/Logo";
 import Search from "../Inputs/Search";
 import { navItems } from "../../navItems";
+
+const setActiveLink = ({ isActive }) =>
+  isActive
+    ? `${styles.header__nav_link} ${styles.header__nav_link_active}`
+    : `${styles.header__nav_link}`;
 
 export default function Header() {
   return (
@@ -14,9 +19,9 @@ export default function Header() {
           <Search />
 
           {navItems.map((item) => (
-            <Link to={item[1]} className={styles.header__nav_link}>
+            <NavLink to={item[1]} className={setActiveLink}>
               {item[0]}
-            </Link>
+            </NavLink>
           ))}
         </nav>
       </div>

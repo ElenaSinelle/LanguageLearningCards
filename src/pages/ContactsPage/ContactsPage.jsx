@@ -1,11 +1,11 @@
-import styles from "./Contacts.module.scss";
+import styles from "./ContactsPage.module.scss";
 import {
   GoBackButton,
   GoForwardButton,
   GoHomeButton,
 } from "../../components/NavigateButtons/NavigateButtons";
 
-export default function Contacts() {
+export default function ContactsPage() {
   return (
     <div className={`${styles.container} ${styles.contacts}`}>
       <h3 className={styles.contacts__title}>

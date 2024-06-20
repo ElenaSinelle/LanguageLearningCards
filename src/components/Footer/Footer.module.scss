@@ -3,7 +3,7 @@
 
 .footer {
   background-color: $darkBgColor;
-  padding-bottom: 2rem;
+  padding-bottom: 1rem;
 
   &__container {
     color: $lightFontColor;
@@ -26,6 +26,10 @@
 
     &_link {
       @include navLink;
+
+      &_active {
+        @include onHover;
+      }
     }
   }
 }

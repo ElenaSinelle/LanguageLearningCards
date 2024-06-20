@@ -1,6 +1,6 @@
 .footer {
   background-color: rgb(5, 94, 124);
-  padding-bottom: 2rem;
+  padding-bottom: 1rem;
 }
 .footer__container {
   color: rgba(255, 255, 255, 0.792);
@@ -27,9 +27,9 @@
   font-weight: bolder;
   transition: all ease 0.5s;
 }
-.footer__nav_link:hover, .footer__nav_link:active {
+.footer__nav_link_active {
   color: rgb(0, 0, 0);
-  transform: scale(0.97);
+  transform: scale(1.08);
 }
 
 .container {

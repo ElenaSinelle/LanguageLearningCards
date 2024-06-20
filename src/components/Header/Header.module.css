@@ -5,8 +5,8 @@
   z-index: 5;
 }
 .header__container {
-  padding-top: 1rem;
-  padding-bottom: 1rem;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -23,7 +23,7 @@
   font-weight: bolder;
   transition: all ease 0.5s;
 }
-.header__nav_link:hover, .header__nav_link:active {
+.header__nav_link_active {
   color: rgb(0, 0, 0);
   transform: scale(0.97);
 }
