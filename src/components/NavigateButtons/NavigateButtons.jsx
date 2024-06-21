@@ -1,4 +1,4 @@
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 import styles from "./NavigateButtons.module.scss";
 
 function GoBackButton() {
@@ -22,9 +22,9 @@ function GoForwardButton() {
 function GoHomeButton() {
   const navigate = useNavigate();
   return (
-    <button className={styles.btn} onClick={() => navigate("/")}>
+    <Link className={styles.btn} to="/">
       Go Home
-    </button>
+    </Link>
   );
 }
 

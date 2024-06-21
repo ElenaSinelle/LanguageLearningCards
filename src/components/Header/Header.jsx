@@ -19,7 +19,7 @@ export default function Header() {
           <Search />
 
           {navItems.map((item) => (
-            <NavLink to={item[1]} className={setActiveLink}>
+            <NavLink to={item[1]} key={item[0]} className={setActiveLink}>
               {item[0]}
             </NavLink>
           ))}

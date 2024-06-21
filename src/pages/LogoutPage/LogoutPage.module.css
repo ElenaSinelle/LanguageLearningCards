@@ -1,0 +1,46 @@
+.container {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0.5rem 5rem;
+}
+
+.logout {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 1.5rem;
+  padding: 2rem 0;
+}
+.logout__title {
+  text-align: center;
+}
+.logout__hint {
+  font-size: 1.2rem;
+  font-weight: bolder;
+}
+.logout__form {
+  font-size: 1.4rem;
+  font-weight: bolder;
+}
+.logout__form_btn {
+  padding: 0.3rem 1rem;
+  border: transparent;
+  border-radius: 0.2rem;
+  outline: none;
+  background-color: rgb(90, 182, 181);
+  color: rgba(255, 255, 255, 0.792);
+  min-width: 7rem;
+  font-size: 1.2rem;
+  font-weight: bolder;
+  text-decoration: none;
+  text-align: center;
+  transition: all ease 0.5s;
+  cursor: pointer;
+  max-width: max-content;
+  box-shadow: 0 2px 5px #919191;
+}
+.logout__form_btn:hover, .logout__form_btn:active {
+  color: rgb(0, 0, 0);
+  transform: scale(1.02);
+}

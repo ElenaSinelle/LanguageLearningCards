@@ -1,0 +1,56 @@
+@import "../../commonStyles/variables.module.scss";
+@import "../../commonStyles/mixins.module.scss";
+
+.container {
+  @include container;
+}
+
+.login {
+  @include flexAlignment;
+  flex-direction: column;
+  gap: 1.5rem;
+  padding: 2rem 0;
+
+  &__title {
+    text-align: center;
+  }
+
+  &__hint_top {
+    font-size: 1.2rem;
+    font-weight: bolder;
+  }
+
+  &__hint_bottom {
+    color: $lightBlueColor;
+    font-style: italic;
+    font-weight: bolder;
+  }
+
+  &__form {
+    @include flexAlignment;
+    flex-direction: column;
+    gap: 1.5rem;
+    padding: 2rem;
+    background-color: $themeGreen;
+    border-radius: $borderRadius;
+    box-shadow: $box-shadow;
+    font-size: 1.4rem;
+    font-weight: bolder;
+
+    & input {
+      font-size: inherit;
+      padding: 0.5rem;
+      margin-left: 1rem;
+      outline: none;
+      border: none;
+      border-radius: $borderRadius;
+      box-shadow: $box-shadow;
+    }
+
+    &_btn {
+      @include button;
+      max-width: max-content;
+      box-shadow: $box-shadow;
+    }
+  }
+}

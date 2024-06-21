@@ -1,6 +1,7 @@
 export const navItems = [
-  ["Login", "/login"],
   ["Cards", "/cards"],
   ["Vocabulary", "/vocabulary"],
   ["Contacts", "/contacts"],
+  ["Login", "/login"],
+  ["Logout", "/logout"],
 ];

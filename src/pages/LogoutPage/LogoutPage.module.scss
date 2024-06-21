@@ -1,0 +1,33 @@
+@import "../../commonStyles/variables.module.scss";
+@import "../../commonStyles/mixins.module.scss";
+
+.container {
+  @include container;
+}
+
+.logout {
+  @include flexAlignment;
+  flex-direction: column;
+  gap: 1.5rem;
+  padding: 2rem 0;
+
+  &__title {
+    text-align: center;
+  }
+
+  &__hint {
+    font-size: 1.2rem;
+    font-weight: bolder;
+  }
+
+  &__form {
+    font-size: 1.4rem;
+    font-weight: bolder;
+
+    &_btn {
+      @include button;
+      max-width: max-content;
+      box-shadow: $box-shadow;
+    }
+  }
+}

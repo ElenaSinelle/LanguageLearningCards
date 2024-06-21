@@ -19,7 +19,7 @@ export default function Footer() {
         <div className={styles.footer__line}></div>
         <ul className={styles.footer__nav}>
           {navItems.map((item) => (
-            <NavLink to={item[1]} className={setActiveLink}>
+            <NavLink to={item[1]} key={item[0]} className={setActiveLink}>
               {item[0]}
             </NavLink>
           ))}
