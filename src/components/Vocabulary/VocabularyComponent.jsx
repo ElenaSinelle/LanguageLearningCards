@@ -11,7 +11,7 @@ export default function VocabularyComponent() {
     <div className={styles.container}>
       <GoBackButton />
       <div className={styles.vocab}>
-        <h2 className={styles.vocab__title}>Vocabulary Variants</h2>
+        <h2 className={styles.vocab__title}>Vocabulary</h2>
 
         <div className={styles.vocab__container}>
           <VocabHeader />

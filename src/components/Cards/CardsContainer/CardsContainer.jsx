@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import styles from "./CardsContainer.module.scss";
 import { CustomContext } from "../../../Context";
 
@@ -8,7 +8,12 @@ import { GoBackButton } from "../../../components/NavigateButtons/NavigateButton
 
 export default function CardsContainer() {
   const { terms } = useContext(CustomContext);
-  const [currentTerm, setCurrentTerm] = useState(0);
+
+  const userTermId = localStorage.getItem("userTermId")
+    ? JSON.parse(localStorage.getItem("userTermId"))
+    : 0;
+
+  const [currentTerm, setCurrentTerm] = useState(userTermId);
 
   const handleNextWord = () => {
     setCurrentTerm((prev) => (prev === terms.length - 1 ? 0 : prev + 1));
@@ -21,6 +26,10 @@ export default function CardsContainer() {
   const errorMessageRender = (
     <div className={styles.errorMessage}>No terms available</div>
   );
+
+  useEffect(() => {
+    localStorage.setItem("userTermId", JSON.stringify(currentTerm));
+  }, [currentTerm]);
 
   return (
     <div className={styles.container}>

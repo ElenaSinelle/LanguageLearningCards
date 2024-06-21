@@ -31,11 +31,38 @@ export default function CardPage() {
   return (
     <div className={styles.container}>
       <GoBackButton />
-      <h2>Details of word "{term.english}"</h2>
-      <p>English: {term.english}</p>
-      <p>Transcription: {term.transcription}</p>
-      <p>Translation into Russian: {term.russian}</p>
-      <p>The word belongs to the category: {term.tags}</p>
+      <div className={styles.cardPage}>
+        <h2 className={styles.cardPage__title}>
+          Details of word "{term.english}"
+        </h2>
+        <div className={styles.cardPage__item}>
+          <p>
+            English:{" "}
+            <span className={styles.cardPage__item_description}>
+              {term.english}
+            </span>
+          </p>
+          <p>
+            Transcription:{" "}
+            <span className={styles.cardPage__item_description}>
+              {term.transcription}
+            </span>
+          </p>
+          <p>
+            Translation into Russian:{" "}
+            <span className={styles.cardPage__item_description}>
+              {term.russian}
+            </span>
+          </p>
+          <p>
+            The word belongs to the category:{" "}
+            <span className={styles.cardPage__item_description}>
+              {term.tags}
+            </span>
+          </p>
+        </div>
+      </div>
+
       <GoHomeButton />
     </div>
   );

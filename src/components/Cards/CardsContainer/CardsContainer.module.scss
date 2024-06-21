@@ -3,6 +3,7 @@
 
 .container {
   @include container;
+  height: 100%;
 }
 
 .cardsContainer {
@@ -10,6 +11,7 @@
   flex-direction: column;
   gap: 2rem;
   padding-top: 1rem;
+  height: 100%;
 
   &__currentCardContainer {
     display: grid;

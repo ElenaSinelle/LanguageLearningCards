@@ -3,4 +3,5 @@
 
 .btn {
   @include button;
+  max-width: max-content;
 }

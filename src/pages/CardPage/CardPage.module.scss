@@ -3,4 +3,35 @@
 
 .container {
   @include container;
+  height: 100%;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+}
+
+.cardPage {
+  @include flexAlignment;
+  flex-direction: column;
+  padding: 2rem 0;
+  gap: 2rem;
+
+  &__title {
+    text-align: center;
+  }
+
+  &__item {
+    background-color: $themePink;
+    flex: 1 1 auto;
+    padding: 2rem;
+    border-radius: $borderRadius;
+    box-shadow: $box-shadow;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    &_description {
+      font-weight: bolder;
+      color: $darkBlueColor;
+      font-size: 1.5rem;
+    }
+  }
 }

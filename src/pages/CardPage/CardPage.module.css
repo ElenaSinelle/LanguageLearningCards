@@ -2,4 +2,34 @@
   max-width: 1440px;
   margin: 0 auto;
   padding: 0.5rem 5rem;
+  height: 100%;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+}
+
+.cardPage {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 2rem 0;
+  gap: 2rem;
+}
+.cardPage__title {
+  text-align: center;
+}
+.cardPage__item {
+  background-color: rgba(243, 144, 144, 0.5);
+  flex: 1 1 auto;
+  padding: 2rem;
+  border-radius: 0.2rem;
+  box-shadow: 0 2px 5px #919191;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.cardPage__item_description {
+  font-weight: bolder;
+  color: rgb(18, 102, 101);
+  font-size: 1.5rem;
 }

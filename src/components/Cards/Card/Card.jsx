@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import audio from "../../../images/icons/audio.svg";
 
 import styles from "./Card.module.scss";
 
