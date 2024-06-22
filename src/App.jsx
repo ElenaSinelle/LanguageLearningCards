@@ -9,11 +9,11 @@ import CardPage from "./pages/CardPage/CardPage";
 import VocabularyPage from "./pages/VocabularyPage/VocabularyPage";
 import NotFoundPage from "./pages/NotFoundPage/NotFoundPage";
 import RequireAuth from "./hoc/RequireAuth";
-import { AuthProvider } from "./hoc/AuthContext";
+import { AuthContextProvider } from "./hoc/AuthContext";
 
 export default function App() {
   return (
-    <AuthProvider>
+    <AuthContextProvider>
       <Router basename="/LanguageLearningCards">
         <Routes>
           <Route path="/" element={<Layout />}>
@@ -63,6 +63,6 @@ export default function App() {
           </Route>
         </Routes>
       </Router>
-    </AuthProvider>
+    </AuthContextProvider>
   );
 }

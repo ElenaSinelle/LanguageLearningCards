@@ -1,6 +1,6 @@
 import { useParams } from "react-router-dom";
-import { useState, useEffect, useContext } from "react";
-import { CustomContext } from "../../Context";
+import { useState, useEffect } from "react";
+import { useTerms } from "../../hoc/TermsContext";
 import styles from "./CardPage.module.scss";
 import {
   GoBackButton,
@@ -9,7 +9,7 @@ import {
 
 export default function CardPage() {
   const { id } = useParams();
-  const { terms } = useContext(CustomContext);
+  const { terms } = useTerms();
   const [term, setTerm] = useState(null);
 
   useEffect(() => {

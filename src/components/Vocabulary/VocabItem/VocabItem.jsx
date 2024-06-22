@@ -1,6 +1,6 @@
-import React, { useState, useContext, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import { CustomContext } from "../../../Context";
+import { useTerms } from "../../../hoc/TermsContext";
 import VocabButton from "../VocabButton/VocabButton";
 import VocabInput from "../VocabInput/VocabInput";
 import styles from "../Vocabulary.module.scss";
@@ -12,7 +12,7 @@ const themes = [themePink, themeBlue, themeGreen];
 
 export default function VocabItem(props) {
   const { id, english, transcription, russian } = props;
-  const { updateTerm, removeTerm } = useContext(CustomContext);
+  const { updateTerm, removeTerm } = useTerms();
   const [editing, setEditing] = useState(false);
 
   // temporary states - for inputs that being edited

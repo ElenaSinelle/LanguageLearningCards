@@ -1,9 +1,9 @@
-import React, { createContext, useState } from "react";
-import { terms as termsArr } from "./terms";
+import React, { createContext, useContext, useState } from "react";
+import { terms as termsArr } from "../terms";
 
-export const CustomContext = createContext();
+export const TermsContext = createContext();
 
-export function Context(props) {
+export function TermsContextProvider(props) {
   const [terms, setTerms] = useState(termsArr);
 
   const removeTerm = (english) => {
@@ -25,8 +25,12 @@ export function Context(props) {
   };
 
   return (
-    <CustomContext.Provider value={value}>
+    <TermsContext.Provider value={value}>
       {props.children}
-    </CustomContext.Provider>
+    </TermsContext.Provider>
   );
+}
+
+export function useTerms() {
+  return useContext(TermsContext);
 }

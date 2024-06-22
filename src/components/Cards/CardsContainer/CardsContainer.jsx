@@ -1,13 +1,13 @@
-import React, { useContext, useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import styles from "./CardsContainer.module.scss";
-import { CustomContext } from "../../../Context";
+import { useTerms } from "../../../hoc/TermsContext";
 
 import Card from "../Card/Card";
 import PgntnButton from "../PgntnButton/PgntnButton";
 import { GoBackButton } from "../../../components/NavigateButtons/NavigateButtons";
 
 export default function CardsContainer() {
-  const { terms } = useContext(CustomContext);
+  const { terms } = useTerms();
 
   const userTermId = localStorage.getItem("userTermId")
     ? JSON.parse(localStorage.getItem("userTermId"))

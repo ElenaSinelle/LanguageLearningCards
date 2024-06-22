@@ -2,17 +2,17 @@ import { Outlet } from "react-router-dom";
 import styles from "../../commonStyles/index.module.scss";
 import Header from "../Header/Header";
 import Footer from "../Footer/Footer";
-import { Context } from "../../Context";
+import { TermsContextProvider } from "../../hoc/TermsContext";
 
 function Layout() {
   return (
     <div className={styles.wrapper}>
       <Header />
-      <Context>
+      <TermsContextProvider>
         <main>
           <Outlet />
         </main>
-      </Context>
+      </TermsContextProvider>
       <Footer />
     </div>
   );
