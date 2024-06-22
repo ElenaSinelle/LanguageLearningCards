@@ -1,23 +1,28 @@
 @import "../../commonStyles/variables.module.scss";
 @import "../../commonStyles/mixins.module.scss";
 
-.homePage {
+.container {
+  @include container;
   height: 100%;
-  background-image: url("../../images/png/background.jpg");
-  background-repeat: no-repeat;
-  background-size: cover;
+}
+
+.notFound {
+  height: 100%;
   @include flexAlignment;
   flex-direction: column;
   gap: 2rem;
   color: $darkBlueColor;
 
-  &__about,
-  &__toLogin {
+  &__404 {
+    font-size: 4rem;
+  }
+
+  &__title {
     font-weight: bolder;
     font-size: 1.3rem;
   }
 
-  &__linkLogin {
+  &__homeLink {
     @include button;
   }
 }
