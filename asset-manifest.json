@@ -1,0 +1,26 @@
+{
+  "files": {
+    "main.css": "/LanguageLearningCards/static/css/main.75b82070.css",
+    "main.js": "/LanguageLearningCards/static/js/main.31a1bf9a.js",
+    "static/media/background.jpg": "/LanguageLearningCards/static/media/background.b3e7b370742c689a812d.jpg",
+    "static/media/Lato-Italic.eot": "/LanguageLearningCards/static/media/Lato-Italic.fd71a75b79c4b1ed7053.eot",
+    "static/media/Lato-Regular.eot": "/LanguageLearningCards/static/media/Lato-Regular.422c97520c3b637a7749.eot",
+    "static/media/Lato-Light.ttf": "/LanguageLearningCards/static/media/Lato-Light.c7400fcad9e48ca9043f.ttf",
+    "static/media/Lato-Italic.ttf": "/LanguageLearningCards/static/media/Lato-Italic.a9f3ee269217f44df65f.ttf",
+    "static/media/Lato-Regular.ttf": "/LanguageLearningCards/static/media/Lato-Regular.9d883d540ee2b4de8024.ttf",
+    "static/media/Lato-Light.eot": "/LanguageLearningCards/static/media/Lato-Light.1e9b63c2823708c0d3de.eot",
+    "static/media/Lato-Italic.woff": "/LanguageLearningCards/static/media/Lato-Italic.4fb64f349e2dd356bcda.woff",
+    "static/media/Lato-Regular.woff": "/LanguageLearningCards/static/media/Lato-Regular.7da1db4cdc4ad0c3e598.woff",
+    "static/media/Lato-Light.woff": "/LanguageLearningCards/static/media/Lato-Light.74f701a3552fa1857216.woff",
+    "static/media/Lato-Italic.woff2": "/LanguageLearningCards/static/media/Lato-Italic.fc2e1037ed333c0bffec.woff2",
+    "static/media/Lato-Regular.woff2": "/LanguageLearningCards/static/media/Lato-Regular.b1d221d6ada1a39eaa80.woff2",
+    "static/media/Lato-Light.woff2": "/LanguageLearningCards/static/media/Lato-Light.eb7bceccf702f3a32e69.woff2",
+    "index.html": "/LanguageLearningCards/index.html",
+    "main.75b82070.css.map": "/LanguageLearningCards/static/css/main.75b82070.css.map",
+    "main.31a1bf9a.js.map": "/LanguageLearningCards/static/js/main.31a1bf9a.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.75b82070.css",
+    "static/js/main.31a1bf9a.js"
+  ]
+}
