@@ -1,0 +1,7 @@
+@import "../../commonStyles/variables.module.scss";
+@import "../../commonStyles/mixins.module.scss";
+
+.container {
+  @include container;
+  height: 100%;
+}
