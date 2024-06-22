@@ -1,0 +1,35 @@
+.homePage {
+  height: 100%;
+  background-image: url("../../images/png/background.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 2rem;
+  color: rgb(18, 102, 101);
+}
+.homePage__about, .homePage__toLogin {
+  font-weight: bolder;
+  font-size: 1.3rem;
+}
+.homePage__linkLogin {
+  padding: 0.3rem 1rem;
+  border: transparent;
+  border-radius: 0.2rem;
+  outline: none;
+  background-color: rgb(90, 182, 181);
+  color: rgba(255, 255, 255, 0.792);
+  min-width: 7rem;
+  font-size: 1.2rem;
+  font-weight: bolder;
+  text-decoration: none;
+  text-align: center;
+  transition: all ease 0.5s;
+  cursor: pointer;
+}
+.homePage__linkLogin:hover, .homePage__linkLogin:active {
+  color: rgb(0, 0, 0);
+  transform: scale(1.02);
+}

@@ -1,0 +1,26 @@
+@import "../../commonStyles/variables.module.scss";
+@import "../../commonStyles/mixins.module.scss";
+
+.container {
+}
+
+.homePage {
+  height: 100%;
+  background-image: url("../../images/png/background.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  @include flexAlignment;
+  flex-direction: column;
+  gap: 2rem;
+  color: $darkBlueColor;
+
+  &__about,
+  &__toLogin {
+    font-weight: bolder;
+    font-size: 1.3rem;
+  }
+
+  &__linkLogin {
+    @include button;
+  }
+}
