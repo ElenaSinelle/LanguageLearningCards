@@ -22,6 +22,25 @@
   grid-auto-rows: 1fr;
   box-shadow: 0 2px 5px #919191;
 }
+.vocab__addBtn {
+  padding: 0.3rem 1rem;
+  border: transparent;
+  border-radius: 0.2rem;
+  outline: none;
+  background-color: rgb(90, 182, 181);
+  color: rgba(255, 255, 255, 0.792);
+  min-width: 7rem;
+  font-size: 1.2rem;
+  font-weight: bolder;
+  text-decoration: none;
+  text-align: center;
+  transition: all ease 0.5s;
+  cursor: pointer;
+}
+.vocab__addBtn:hover, .vocab__addBtn:active {
+  color: rgb(0, 0, 0);
+  transform: scale(1.02);
+}
 .vocab__line {
   display: grid;
   grid-template-columns: 3fr 1.3fr;

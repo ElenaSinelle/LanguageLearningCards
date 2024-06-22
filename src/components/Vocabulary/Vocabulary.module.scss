@@ -24,6 +24,10 @@
     box-shadow: $box-shadow;
   }
 
+  &__addBtn {
+    @include button;
+  }
+
   &__line {
     display: grid;
     grid-template-columns: 3fr 1.3fr;

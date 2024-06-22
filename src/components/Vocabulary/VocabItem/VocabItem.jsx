@@ -11,29 +11,31 @@ import themeGreen from "../../../commonStyles/themes/themeGreen.module.scss";
 const themes = [themePink, themeBlue, themeGreen];
 
 export default function VocabItem(props) {
-  const { id, english, transcription, russian } = props;
-  const { updateTerm, removeTerm } = useTerms();
-  const [editing, setEditing] = useState(false);
+  const { id, english, transcription, russian, isNew, setIsNew } = props;
+  const { terms, removeTerm, updateTerm, addTerm } = useTerms();
+  const [editing, setEditing] = useState(isNew || false);
 
-  // temporary states - for inputs that being edited
   const [tempTerm, setTempTerm] = useState({
-    english,
-    transcription,
-    russian,
+    id: id || terms.length, // generate a unique id if it's a new term
+    english: english || "",
+    transcription: transcription || "",
+    russian: russian || "",
   });
 
-  // saved states for edited and saved inputs
   const [savedTerm, setSavedTerm] = useState({
-    english,
-    transcription,
-    russian,
+    id: id || terms.length,
+    english: english || "",
+    transcription: transcription || "",
+    russian: russian || "",
   });
 
   // update edited inputs and inputs under editing after each render
   useEffect(() => {
-    setTempTerm({ english, transcription, russian });
-    setSavedTerm({ english, transcription, russian });
-  }, [english, transcription, russian]);
+    setTempTerm({ id, english, transcription, russian });
+    setSavedTerm({ id, english, transcription, russian });
+    console.log(id); // no id of new term (
+    console.log(terms.length);
+  }, [terms, id, english, transcription, russian]);
 
   // handlers
   const handleEdit = () => {
@@ -41,12 +43,20 @@ export default function VocabItem(props) {
   };
 
   const handleSave = () => {
-    updateTerm(tempTerm); //from context
+    if (isNew) {
+      addTerm(tempTerm);
+      setIsNew(false);
+    } else {
+      updateTerm(tempTerm);
+    }
     setSavedTerm(tempTerm);
     setEditing(false);
   };
 
   const handleCancel = () => {
+    if (isNew) {
+      removeTerm(tempTerm.id); // Remove the new term if the user cancels
+    }
     setTempTerm(savedTerm);
     setEditing(false);
   };
@@ -112,12 +122,13 @@ export default function VocabItem(props) {
 
       <div className={styles.vocab__btnsContainer}>
         {!editing ? renderViewModeButtons() : renderEditModeButtons()}
-
-        <VocabButton
-          className={`${styles.vocab__btn} ${themes[0].bg}`}
-          onClick={() => removeTerm(english)}
-          content="Delete Word"
-        />
+        {!isNew && (
+          <VocabButton
+            className={`${styles.vocab__btn} ${themes[0].bg}`}
+            onClick={() => removeTerm(id)}
+            content="Delete"
+          />
+        )}
       </div>
     </div>
   );

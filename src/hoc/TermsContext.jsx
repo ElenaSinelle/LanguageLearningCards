@@ -6,22 +6,25 @@ export const TermsContext = createContext();
 export function TermsContextProvider(props) {
   const [terms, setTerms] = useState(termsArr);
 
-  const removeTerm = (english) => {
-    setTerms(terms.filter((term) => term.english !== english));
+  const removeTerm = (id) => {
+    setTerms(terms.filter((term) => term.id !== id));
   };
 
   const updateTerm = (updatedTerm) => {
     setTerms(
-      terms.map((term) =>
-        term.english === updatedTerm.english ? updatedTerm : term
-      )
+      terms.map((term) => (term.id === updatedTerm.id ? updatedTerm : term))
     );
+  };
+
+  const addTerm = (newTerm) => {
+    setTerms([...terms, newTerm]);
   };
 
   const value = {
     terms,
     removeTerm,
     updateTerm,
+    addTerm,
   };
 
   return (

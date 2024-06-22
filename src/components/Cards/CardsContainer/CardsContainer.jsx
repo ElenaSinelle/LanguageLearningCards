@@ -7,9 +7,11 @@ import PgntnButton from "../PgntnButton/PgntnButton";
 export default function CardsContainer() {
   const { terms } = useTerms();
 
-  const userTermId = localStorage.getItem("userTermId")
+  const userTermId = !localStorage.getItem("userTermId")
+    ? 0
+    : JSON.parse(localStorage.getItem("userTermId")) < terms.length
     ? JSON.parse(localStorage.getItem("userTermId"))
-    : 0;
+    : terms.length - 1;
 
   const [currentTerm, setCurrentTerm] = useState(userTermId);
 
