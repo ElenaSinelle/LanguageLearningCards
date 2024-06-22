@@ -19,8 +19,14 @@ export default function LoginPage() {
   };
 
   useEffect(() => {
-    if (user) return navigate("/");
-  });
+    if (user) {
+      navigate("/");
+    }
+  }, [user, navigate]);
+
+  if (user) {
+    return null;
+  }
 
   return (
     <div className={styles.container}>
