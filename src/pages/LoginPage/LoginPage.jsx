@@ -24,10 +24,6 @@ export default function LoginPage() {
     }
   }, [user, navigate]);
 
-  if (user) {
-    return null;
-  }
-
   return (
     <div className={styles.container}>
       <div className={styles.login}>
