@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>Page Not Found</title>
+  <script>
+    // Перенаправляем все запросы на index.html для маршрутизации на стороне клиента
+    var redirectTo = '/LanguageLearningCards/';
+    window.location.href = redirectTo + 'index.html?' + encodeURIComponent(window.location.pathname + window.location.search + window.location.hash);
+  </script>
+</head>
+
+<body>
+</body>
+
+</html>
