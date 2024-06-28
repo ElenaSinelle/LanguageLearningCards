@@ -13,7 +13,7 @@ export default function CardPage() {
   const [term, setTerm] = useState(null);
 
   useEffect(() => {
-    const foundTerm = terms.find((term) => term.id === id);
+    const foundTerm = terms.find((term) => term.id.toString() === id);
     setTerm(foundTerm);
   }, [terms, id]);
 

@@ -7,6 +7,7 @@ export default function VocabHeader() {
         <VocabHeaderItem contents="Term" />
         <VocabHeaderItem contents="Transcription" />
         <VocabHeaderItem contents="Translation" />
+        <VocabHeaderItem contents="Category" />
       </div>
 
       <VocabHeaderItem contents="" />

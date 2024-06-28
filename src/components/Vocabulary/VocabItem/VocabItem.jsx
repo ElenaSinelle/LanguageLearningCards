@@ -11,31 +11,53 @@ import themeGreen from "../../../commonStyles/themes/themeGreen.module.scss";
 const themes = [themePink, themeBlue, themeGreen];
 
 export default function VocabItem(props) {
-  const { id, english, transcription, russian, isNew, setIsNew } = props;
+  const { id, english, transcription, russian, tags, isNew, setIsNew } = props;
   const { terms, removeTerm, updateTerm, addTerm } = useTerms();
   const [editing, setEditing] = useState(isNew || false);
 
+  const [nextId, setNextId] = useState(terms.length);
+
+  useEffect(() => {
+    const maxId = terms.reduce((max, term) => Math.max(max, term.id), 0);
+    setNextId(maxId + 1);
+  }, [terms]);
+
   const [tempTerm, setTempTerm] = useState({
-    id: id || terms.length, // generate a unique id if it's a new term
+    id: id || nextId,
     english: english || "",
     transcription: transcription || "",
     russian: russian || "",
+    tags: tags || "",
   });
 
   const [savedTerm, setSavedTerm] = useState({
-    id: id || terms.length,
+    id: id || nextId,
     english: english || "",
     transcription: transcription || "",
     russian: russian || "",
+    tags: tags || "",
   });
 
   // update edited inputs and inputs under editing after each render
   useEffect(() => {
-    setTempTerm({ id, english, transcription, russian });
-    setSavedTerm({ id, english, transcription, russian });
-    console.log(id); // no id of new term (
-    console.log(terms.length);
-  }, [terms, id, english, transcription, russian]);
+    if (isNew) {
+      setTempTerm((prevTerm) => ({
+        ...prevTerm,
+        id: nextId,
+      }));
+      setSavedTerm((prevTerm) => ({
+        ...prevTerm,
+        id: nextId,
+      }));
+    }
+  }, [nextId, terms, isNew]);
+
+  useEffect(() => {
+    if (!isNew) {
+      setTempTerm({ id, english, transcription, russian, tags });
+      setSavedTerm({ id, english, transcription, russian, tags });
+    }
+  }, [terms, id, english, transcription, russian, tags, isNew]);
 
   // handlers
   const handleEdit = () => {
@@ -46,6 +68,7 @@ export default function VocabItem(props) {
     if (isNew) {
       addTerm(tempTerm);
       setIsNew(false);
+      setNextId(nextId + 1);
     } else {
       updateTerm(tempTerm);
     }
@@ -67,6 +90,7 @@ export default function VocabItem(props) {
       <div>{savedTerm.english}</div>
       <div>{savedTerm.transcription}</div>
       <div>{savedTerm.russian}</div>
+      <div>{savedTerm.tags}</div>
     </Link>
   );
 
@@ -86,6 +110,10 @@ export default function VocabItem(props) {
       <VocabInput
         defaultValue={tempTerm.russian}
         onChange={(e) => setTempTerm({ ...tempTerm, russian: e.target.value })}
+      />
+      <VocabInput
+        defaultValue={tempTerm.tags}
+        onChange={(e) => setTempTerm({ ...tempTerm, tags: e.target.value })}
       />
     </div>
   );
