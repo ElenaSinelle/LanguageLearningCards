@@ -1,11 +1,13 @@
 import React, { useEffect, useState } from "react";
 import styles from "./CardsContainer.module.scss";
 import { useTerms } from "../../../hoc/TermsContext";
+import { useCounter } from "../../../hoc/CounterContext";
 import Card from "../Card/Card";
 import PgntnButton from "../PgntnButton/PgntnButton";
 
 export default function CardsContainer() {
   const { terms } = useTerms();
+  const { count } = useCounter();
 
   const userTermId = !localStorage.getItem("userTermId")
     ? 0
@@ -67,6 +69,12 @@ export default function CardsContainer() {
           <span className={styles.cardsContainer__pagination_num}>
             {terms.length}
           </span>
+        </div>
+
+        <div className={styles.cardsContainer__total}>
+          You have learned{" "}
+          <span className={styles.cardsContainer__total_num}>{count}</span>{" "}
+          words during current training
         </div>
       </div>
     </div>

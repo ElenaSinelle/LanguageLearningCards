@@ -17,8 +17,8 @@
 .cardsContainer__currentCardContainer {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  grid-template-rows: 6fr 1fr;
-  grid-template-areas: "prev card next" ". pagination .";
+  grid-template-rows: 6fr 1fr 1fr;
+  grid-template-areas: "prev card next" ". pagination ." ". total .";
   gap: 2rem;
   align-items: center;
 }
@@ -33,11 +33,16 @@
 }
 .cardsContainer__pagination {
   grid-area: pagination;
+}
+.cardsContainer__total {
+  grid-area: total;
+}
+.cardsContainer__pagination, .cardsContainer__total {
   justify-self: center;
   color: rgb(5, 94, 124);
   font-weight: 600;
 }
-.cardsContainer__pagination_num {
+.cardsContainer__pagination_num, .cardsContainer__total_num {
   color: rgb(90, 182, 181);
   font-size: larger;
 }

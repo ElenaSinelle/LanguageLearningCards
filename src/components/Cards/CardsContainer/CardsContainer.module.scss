@@ -16,10 +16,11 @@
   &__currentCardContainer {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: 6fr 1fr;
+    grid-template-rows: 6fr 1fr 1fr;
     grid-template-areas:
       "prev card next"
-      ". pagination .";
+      ". pagination ."
+      ". total .";
     gap: 2rem;
     align-items: center;
   }
@@ -38,6 +39,14 @@
 
   &__pagination {
     grid-area: pagination;
+  }
+
+  &__total {
+    grid-area: total;
+  }
+
+  &__pagination,
+  &__total {
     justify-self: center;
     color: $darkBgColor;
     font-weight: 600;
