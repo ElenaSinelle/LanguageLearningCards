@@ -4,3 +4,10 @@
 .container {
   @include container;
 }
+
+.vocabPage {
+  &__header {
+    @include flexAlignment;
+    justify-content: space-between;
+  }
+}

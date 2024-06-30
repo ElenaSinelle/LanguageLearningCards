@@ -2,7 +2,6 @@ import React from "react";
 import { NavLink } from "react-router-dom";
 import styles from "./Header.module.scss";
 import Logo from "../Logo/Logo";
-import Search from "../Inputs/Search";
 import { useAuth } from "../../hoc/AuthContext";
 
 const setActiveLink = ({ isActive }) =>
@@ -17,8 +16,6 @@ export default function Header() {
       <div className={`${styles.container} ${styles.header__container}`}>
         <Logo />
         <nav className={styles.header__nav}>
-          <Search />
-
           <NavLink to="/cards" className={setActiveLink}>
             Cards
           </NavLink>

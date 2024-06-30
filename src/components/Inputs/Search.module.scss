@@ -3,9 +3,12 @@
 
 .search {
   @include flexAlignment;
-  gap: 1rem;
+  gap: 1.5rem;
+  background-color: $themePink;
+  @include borderRounded;
+  padding: 0.5rem 2rem;
 
-  &__input {
+  &__textInput {
     width: 20rem;
     @include borderRounded;
     font-size: 1rem;
@@ -13,5 +16,9 @@
 
   &__btn {
     @include button;
+  }
+
+  &__chboxInput {
+    margin: 0 0.5rem 0 0;
   }
 }

@@ -2,30 +2,45 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 1rem;
+  gap: 1.5rem;
+  background-color: rgba(243, 144, 144, 0.5);
+  padding: 0.3rem 1rem;
+  border: transparent;
+  border-radius: 0.2rem;
+  outline: none;
+  padding: 0.5rem 2rem;
 }
-.search__input {
+.search__textInput {
   width: 20rem;
   padding: 0.3rem 1rem;
   border: transparent;
-  border-radius: 0.1rem;
+  border-radius: 0.2rem;
   outline: none;
   font-size: 1rem;
 }
 .search__btn {
   padding: 0.3rem 1rem;
   border: transparent;
-  border-radius: 0.1rem;
+  border-radius: 0.2rem;
   outline: none;
   background-color: rgb(90, 182, 181);
   color: rgba(255, 255, 255, 0.792);
   min-width: 7rem;
-  font-size: 1rem;
+  font-size: 1.2rem;
   font-weight: bolder;
+  text-decoration: none;
+  text-align: center;
   transition: all ease 0.5s;
   cursor: pointer;
 }
 .search__btn:hover, .search__btn:active {
   color: rgb(0, 0, 0);
-  transform: scale(0.97);
+  transform: scale(1.02);
+}
+.search__btn:focus {
+  outline: 2px solid rgb(18, 102, 101);
+  outline-offset: 1px;
+}
+.search__chboxInput {
+  margin: 0 0.5rem 0 0;
 }

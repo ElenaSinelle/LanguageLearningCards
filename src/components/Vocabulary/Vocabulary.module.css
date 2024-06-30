@@ -10,6 +10,7 @@
   align-items: center;
   flex-direction: column;
   gap: 1.5rem;
+  padding-top: 2rem;
   padding-bottom: 2rem;
 }
 .vocab__title {
@@ -40,6 +41,10 @@
 .vocab__addBtn:hover, .vocab__addBtn:active {
   color: rgb(0, 0, 0);
   transform: scale(1.02);
+}
+.vocab__addBtn:focus {
+  outline: 2px solid rgb(18, 102, 101);
+  outline-offset: 1px;
 }
 .vocab__line {
   display: grid;
