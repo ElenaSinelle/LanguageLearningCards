@@ -74,7 +74,7 @@ export default function CardsContainer() {
         <div className={styles.cardsContainer__total}>
           You have learned{" "}
           <span className={styles.cardsContainer__total_num}>{count}</span>{" "}
-          words during current training
+          {count === 1 ? "word" : "words"} during current training
         </div>
       </div>
     </div>
