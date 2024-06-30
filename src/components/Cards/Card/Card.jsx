@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import { Link } from "react-router-dom";
 import { useCounter } from "../../../hoc/CounterContext";
 import styles from "./Card.module.scss";
@@ -6,6 +6,7 @@ import styles from "./Card.module.scss";
 export default function Card({ term, id, isVisible }) {
   const { counter } = useCounter();
   const [translated, setTranslated] = useState(false);
+  const translateBtn = useRef(null);
 
   const handleTranslation = (id) => {
     setTranslated(true);
@@ -14,6 +15,9 @@ export default function Card({ term, id, isVisible }) {
 
   useEffect(() => {
     setTranslated(false);
+    if (isVisible) {
+      translateBtn.current.focus();
+    }
   }, [isVisible]);
 
   if (!isVisible) return null;
@@ -26,12 +30,12 @@ export default function Card({ term, id, isVisible }) {
         {term.english}
       </Link>
       {!translated ? (
-        <button
+        <input
           className={styles.card__showTranslation}
           onClick={() => handleTranslation(id)}
-        >
-          Show translation
-        </button>
+          ref={translateBtn}
+          value="Show translation"
+        />
       ) : (
         <div className={styles.card__translation}>{term.russian}</div>
       )}

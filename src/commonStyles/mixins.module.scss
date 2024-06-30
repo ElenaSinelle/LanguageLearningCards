@@ -59,6 +59,11 @@
   &:active {
     @include onHover;
   }
+
+  &:focus {
+    outline: 2px solid $darkBlueColor;
+    outline-offset: 1px;
+  }
 }
 
 @mixin tableButton {
