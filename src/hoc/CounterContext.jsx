@@ -11,7 +11,7 @@ export function CounterContextProvider({ children }) {
     setCount(termset.size);
   };
 
-  const value = { count, setCount, counter };
+  const value = { count, counter };
 
   return (
     <CounterContext.Provider value={value}>{children}</CounterContext.Provider>
