@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { useCounter } from "../../../hoc/CounterContext";
 import styles from "./Card.module.scss";
 
-export default function Card({ term, id, isVisible }) {
+function Card({ term, id, isVisible }) {
   const { counter } = useCounter();
   const [translated, setTranslated] = useState(false);
   const translateBtn = useRef(null);
@@ -42,3 +42,5 @@ export default function Card({ term, id, isVisible }) {
     </div>
   );
 }
+
+export default React.memo(Card);
