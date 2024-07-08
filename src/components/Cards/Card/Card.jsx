@@ -30,12 +30,11 @@ function Card({ term, id, isVisible }) {
         {term.english}
       </Link>
       {!translated ? (
-        <input
+        <button
           className={styles.card__showTranslation}
           onClick={() => handleTranslation(id)}
           ref={translateBtn}
-          value="Show translation"
-        />
+        >Show translation</button>
       ) : (
         <div className={styles.card__translation}>{term.russian}</div>
       )}
