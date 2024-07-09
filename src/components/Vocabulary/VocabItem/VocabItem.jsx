@@ -79,10 +79,6 @@ export default function VocabItem(props) {
       term.russian &&
       term.tags;
     setIsValid(valid);
-    console.log("Validation status: ", valid);
-    if (!valid) {
-      console.log("not valid");
-    }
     return valid;
   };
 
