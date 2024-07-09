@@ -1,3 +1,3 @@
-export default function VocabInput({ defaultValue, onChange }) {
-  return <input defaultValue={defaultValue} onChange={onChange} />;
+export default function VocabInput({ value, onChange, className }) {
+  return <input value={value} onChange={onChange} className={className}/>;
 }

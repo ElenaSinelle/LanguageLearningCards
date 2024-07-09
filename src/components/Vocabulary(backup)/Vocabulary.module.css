@@ -83,11 +83,3 @@
   cursor: pointer;
   min-width: 6rem;
 }
-.vocab__btn_disabled {
-  background-color: gray;
-  cursor: unset;
-}
-
-.invalid {
-  border: 1px solid red;
-}

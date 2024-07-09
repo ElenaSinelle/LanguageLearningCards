@@ -11,109 +11,169 @@ import themeGreen from "../../../commonStyles/themes/themeGreen.module.scss";
 const themes = [themePink, themeBlue, themeGreen];
 
 export default function VocabItem(props) {
-  const { id, english, transcription, russian, tags, isNew, setIsNew } = props;
-  const { terms, removeTerm, updateTerm, addTerm } = useTerms();
+  const {
+    id,
+    english,
+    transcription,
+    russian,
+    tags,
+    isNew,
+    setIsNew,
+  } = props;
+  const { terms, removeTerm, updateTerm, addTerm } =
+    useTerms();
   const [editing, setEditing] = useState(isNew || false);
-
-  const [nextId, setNextId] = useState(terms.length);
-
-  useEffect(() => {
-    const maxId = terms.reduce((max, term) => Math.max(max, term.id), 0);
-    setNextId(maxId + 1);
-  }, [terms]);
-
-  const [tempTerm, setTempTerm] = useState({
-    id: id || nextId,
+  const [isValid, setIsValid] = useState(true);
+  const [initialTerm, setInitialTerm] = useState({
+    id: id || "",
     english: english || "",
     transcription: transcription || "",
     russian: russian || "",
     tags: tags || "",
   });
 
-  const [savedTerm, setSavedTerm] = useState({
-    id: id || nextId,
-    english: english || "",
-    transcription: transcription || "",
-    russian: russian || "",
-    tags: tags || "",
-  });
+  const [term, setTerm] = useState(initialTerm);
 
-  // update edited inputs and inputs under editing after each render
+  //-effects---------------------------------------
   useEffect(() => {
     if (isNew) {
-      setTempTerm((prevTerm) => ({
+      setTerm(prevTerm => ({
         ...prevTerm,
-        id: nextId,
+        id:
+          terms.reduce(
+            (max, term) => Math.max(max, term.id),
+            0,
+          ) + 1,
       }));
-      setSavedTerm((prevTerm) => ({
-        ...prevTerm,
-        id: nextId,
-      }));
+    } else {
+      setInitialTerm({
+        id,
+        english,
+        transcription,
+        russian,
+        tags,
+      });
+      setTerm({
+        id,
+        english,
+        transcription,
+        russian,
+        tags,
+      });
     }
-  }, [nextId, terms, isNew]);
+  }, [
+    id,
+    english,
+    transcription,
+    russian,
+    tags,
+    isNew,
+    terms,
+  ]);
+
+  //-validation---------------------------------------
+  const validateFields = term => {
+    const valid =
+      term.english &&
+      term.transcription &&
+      term.russian &&
+      term.tags;
+    setIsValid(valid);
+    console.log("Validation status: ", valid);
+    if (!valid) {
+      console.log("not valid");
+    }
+    return valid;
+  };
 
   useEffect(() => {
-    if (!isNew) {
-      setTempTerm({ id, english, transcription, russian, tags });
-      setSavedTerm({ id, english, transcription, russian, tags });
-    }
-  }, [terms, id, english, transcription, russian, tags, isNew]);
+    validateFields(term);
+  }, [term]);
 
-  // handlers
+  //-handlers---------------------------------------
   const handleEdit = () => {
     setEditing(true);
+    validateFields(term);
   };
 
   const handleSave = () => {
-    if (isNew) {
-      addTerm(tempTerm);
-      setIsNew(false);
-      setNextId(nextId + 1);
-    } else {
-      updateTerm(tempTerm);
+    if (validateFields(term)) {
+      if (isNew) {
+        addTerm(term);
+        setIsNew(false);
+      } else {
+        updateTerm(term);
+      }
+      setEditing(false);
     }
-    setSavedTerm(tempTerm);
-    setEditing(false);
   };
 
   const handleCancel = () => {
     if (isNew) {
-      removeTerm(tempTerm.id); // Remove the new term if the user cancels
+      removeTerm(term.id);
+      setIsNew(false);
+    } else {
+      setTerm(initialTerm);
     }
-    setTempTerm(savedTerm);
     setEditing(false);
   };
 
   // inputs in view mode
   const renderViewModeInputs = () => (
-    <Link to={`../cards/${id}`} className={styles.vocab__itemContainer}>
-      <div>{savedTerm.english}</div>
-      <div>{savedTerm.transcription}</div>
-      <div>{savedTerm.russian}</div>
-      <div>{savedTerm.tags}</div>
+    <Link
+      to={`../cards/${id}`}
+      className={styles.vocab__itemContainer}
+    >
+      <div>{term.english}</div>
+      <div>{term.transcription}</div>
+      <div>{term.russian}</div>
+      <div>{term.tags}</div>
     </Link>
   );
 
-  //inputs in editing mode
+  // inputs in editing mode
   const renderEditModeInputs = () => (
     <div className={styles.vocab__itemContainer}>
       <VocabInput
-        defaultValue={tempTerm.english}
-        onChange={(e) => setTempTerm({ ...tempTerm, english: e.target.value })}
-      />
-      <VocabInput
-        defaultValue={tempTerm.transcription}
-        onChange={(e) =>
-          setTempTerm({ ...tempTerm, transcription: e.target.value })
+        className={
+          !term.english && !isValid ? styles.invalid : ""
+        }
+        value={term.english}
+        onChange={e =>
+          setTerm({ ...term, english: e.target.value })
         }
       />
       <VocabInput
-        defaultValue={tempTerm.russian}
-        onChange={(e) => setTempTerm({ ...tempTerm, russian: e.target.value })}
+        className={
+          !term.transcription && !isValid
+            ? styles.invalid
+            : ""
+        }
+        value={term.transcription}
+        onChange={e =>
+          setTerm({
+            ...term,
+            transcription: e.target.value,
+          })
+        }
       />
       <VocabInput
-        defaultValue={tempTerm.tags}
-        onChange={(e) => setTempTerm({ ...tempTerm, tags: e.target.value })}
+        className={
+          !term.russian && !isValid ? styles.invalid : ""
+        }
+        value={term.russian}
+        onChange={e =>
+          setTerm({ ...term, russian: e.target.value })
+        }
+      />
+      <VocabInput
+        className={
+          !term.tags && !isValid ? styles.invalid : ""
+        }
+        value={term.tags}
+        onChange={e =>
+          setTerm({ ...term, tags: e.target.value })
+        }
       />
     </div>
   );
@@ -137,19 +197,30 @@ export default function VocabItem(props) {
       />
 
       <VocabButton
-        className={`${styles.vocab__btn} ${themes[2].bg}`}
+        className={`${styles.vocab__btn} ${
+          !isValid
+            ? `${styles.disabled}`
+            : `${themes[2].bg}`
+        }`}
         onClick={handleSave}
         content="Save Word"
+        disabled={!isValid}
       />
     </>
   );
 
   return (
     <div className={styles.vocab__line}>
-      <div>{!editing ? renderViewModeInputs() : renderEditModeInputs()}</div>
+      <div>
+        {!editing
+          ? renderViewModeInputs()
+          : renderEditModeInputs()}
+      </div>
 
       <div className={styles.vocab__btnsContainer}>
-        {!editing ? renderViewModeButtons() : renderEditModeButtons()}
+        {!editing
+          ? renderViewModeButtons()
+          : renderEditModeButtons()}
         {!isNew && (
           <VocabButton
             className={`${styles.vocab__btn} ${themes[0].bg}`}

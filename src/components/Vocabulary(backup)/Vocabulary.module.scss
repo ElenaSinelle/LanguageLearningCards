@@ -65,14 +65,5 @@
 
   &__btn {
     @include tableButton;
-
-    &_disabled {
-      background-color: gray;
-      cursor: unset;
-    }
   }
-}
-
-.invalid {
-  border: 1px solid red;
 }
