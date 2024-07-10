@@ -134,7 +134,11 @@ export default function VocabItem(props) {
         className={
           !term.english && !isValid ? styles.invalid : ""
         }
-        value={term.english}
+        value={
+          !term.english && !isValid
+            ? "you should enter a term"
+            : term.english
+        }
         onChange={e =>
           setTerm({ ...term, english: e.target.value })
         }
@@ -145,7 +149,11 @@ export default function VocabItem(props) {
             ? styles.invalid
             : ""
         }
-        value={term.transcription}
+        value={
+          !term.transcription && !isValid
+            ? "you should enter transcription"
+            : term.transcription
+        }
         onChange={e =>
           setTerm({
             ...term,
@@ -157,7 +165,11 @@ export default function VocabItem(props) {
         className={
           !term.russian && !isValid ? styles.invalid : ""
         }
-        value={term.russian}
+        value={
+          !term.russian && !isValid
+            ? "you should enter translation"
+            : term.russian
+        }
         onChange={e =>
           setTerm({ ...term, russian: e.target.value })
         }
@@ -166,7 +178,11 @@ export default function VocabItem(props) {
         className={
           !term.tags && !isValid ? styles.invalid : ""
         }
-        value={term.tags}
+        value={
+          !term.tags && !isValid
+            ? "you should enter category"
+            : term.tags
+        }
         onChange={e =>
           setTerm({ ...term, tags: e.target.value })
         }
