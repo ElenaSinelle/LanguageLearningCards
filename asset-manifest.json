@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/LanguageLearningCards/static/css/main.283156cc.css",
-    "main.js": "/LanguageLearningCards/static/js/main.2670d75d.js",
+    "main.css": "/LanguageLearningCards/static/css/main.b643f112.css",
+    "main.js": "/LanguageLearningCards/static/js/main.02b06c60.js",
     "static/media/background.jpg": "/LanguageLearningCards/static/media/background.b3e7b370742c689a812d.jpg",
     "static/media/Lato-Italic.eot": "/LanguageLearningCards/static/media/Lato-Italic.fd71a75b79c4b1ed7053.eot",
     "static/media/Lato-Regular.eot": "/LanguageLearningCards/static/media/Lato-Regular.422c97520c3b637a7749.eot",
@@ -16,11 +16,11 @@
     "static/media/Lato-Regular.woff2": "/LanguageLearningCards/static/media/Lato-Regular.b1d221d6ada1a39eaa80.woff2",
     "static/media/Lato-Light.woff2": "/LanguageLearningCards/static/media/Lato-Light.eb7bceccf702f3a32e69.woff2",
     "index.html": "/LanguageLearningCards/index.html",
-    "main.283156cc.css.map": "/LanguageLearningCards/static/css/main.283156cc.css.map",
-    "main.2670d75d.js.map": "/LanguageLearningCards/static/js/main.2670d75d.js.map"
+    "main.b643f112.css.map": "/LanguageLearningCards/static/css/main.b643f112.css.map",
+    "main.02b06c60.js.map": "/LanguageLearningCards/static/js/main.02b06c60.js.map"
   },
   "entrypoints": [
-    "static/css/main.283156cc.css",
-    "static/js/main.2670d75d.js"
+    "static/css/main.b643f112.css",
+    "static/js/main.02b06c60.js"
   ]
 }
