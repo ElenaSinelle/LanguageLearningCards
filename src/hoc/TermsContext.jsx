@@ -14,7 +14,6 @@ export function TermsContextProvider(props) {
 
   useEffect(() => {
     setIsLoading(true);
-
     fetch("/api/words")
       .then(response => {
         if (response.ok) {
@@ -25,47 +24,10 @@ export function TermsContextProvider(props) {
       })
       .then(response => {
         setTerms(response);
-        setIsLoading(false);
       })
-      .catch(err => setError(err));
-
-    console.log(terms);
+      .catch(err => setError(err))
+      .finally(setIsLoading(false));
   }, []);
-
-  // const fetchAPI = async (
-  //   value = null,
-  //   url,
-  //   method,
-  //   errorMessage = "",
-  // ) => {
-  //   try {
-  //     const requestOptions = {
-  //       method: "POST",
-  //       headers: { "Content-Type": "application/json" },
-  //       body: JSON.stringify(value),
-  //     };
-  //     const response = await fetch(url, requestOptions);
-  //     if (response.ok) {
-  //       method();
-  //     } else {
-  //       throw new Error(errorMessage);
-  //     }
-  //   } catch (err) {
-  //     setError(err);
-  //     console.log(error);
-  //   }
-  // };
-
-  // const removeTermMethod = id =>
-  //   setTerms(terms.filter(term => term.id !== id));
-
-  // async function removeTerm(id) {
-  //   fetchAPI(
-  //     id,
-  //     `/api/words/${id}/delete`,
-  //     removeTermMethod,
-  //   );
-  // }
 
   const removeTerm = async id => {
     try {
@@ -84,7 +46,6 @@ export function TermsContextProvider(props) {
       }
     } catch (err) {
       setError(err);
-      console.log(terms);
     }
   };
 
@@ -112,10 +73,9 @@ export function TermsContextProvider(props) {
             term.id === updatedTerm.id ? updatedTerm : term,
           ),
         );
-
-        console.log("updated");
+        console.log("term updated");
       } else {
-        console.log("failed to update");
+        throw new Error("Failed to update term");
       }
     } catch (err) {
       setError(err);
@@ -138,13 +98,12 @@ export function TermsContextProvider(props) {
       if (response.ok) {
         const createdTerm = await response.json();
         setTerms([...terms, createdTerm]);
-        console.log("added new term");
+        console.log("new term added");
       } else {
-        console.log("not added");
+        throw new Error("Failed to add term");
       }
     } catch (err) {
       setError(err);
-      console.log("smth went wrong with adding");
     }
   };
 

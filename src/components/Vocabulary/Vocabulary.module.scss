@@ -73,7 +73,14 @@
   }
 }
 
+input::placeholder {
+  color: $darkBgColor;
+}
+
 .invalid {
   border: 1px solid $errorColor;
-  color: $errorColor;
+
+  &::placeholder {
+    color: $errorColor;
+  }
 }
