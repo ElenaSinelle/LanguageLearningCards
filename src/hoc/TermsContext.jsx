@@ -30,6 +30,7 @@ export function TermsContextProvider(props) {
   }, []);
 
   const removeTerm = async id => {
+    setIsLoading(true);
     try {
       const response = await fetch(
         `/api/words/${id}/delete`,
@@ -46,10 +47,13 @@ export function TermsContextProvider(props) {
       }
     } catch (err) {
       setError(err);
+    } finally {
+      setIsLoading(false);
     }
   };
 
   const updateTerm = async updatedTerm => {
+    setIsLoading(true);
     try {
       const requestOptions = {
         method: "POST",
@@ -80,10 +84,13 @@ export function TermsContextProvider(props) {
     } catch (err) {
       setError(err);
       console.log(error);
+    } finally {
+      setIsLoading(false);
     }
   };
 
   const addTerm = async newTerm => {
+    setIsLoading(true);
     try {
       const requestOptions = {
         method: "POST",
@@ -104,6 +111,8 @@ export function TermsContextProvider(props) {
       }
     } catch (err) {
       setError(err);
+    } finally {
+      setIsLoading(false);
     }
   };
 

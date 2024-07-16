@@ -3,6 +3,7 @@ import styles from "./Vocabulary.module.scss";
 import VocabItem from "./VocabItem/VocabItem";
 import VocabHeader from "./VocabHeader/VocabHeader";
 import { useTerms } from "../../hoc/TermsContext";
+import Loader from "../Loader/Loader";
 
 export default function VocabularyComponent({
   query,
@@ -19,7 +20,7 @@ export default function VocabularyComponent({
         <VocabHeader />
 
         {isLoading ? (
-          <p>Loading...</p>
+          <Loader />
         ) : error ? (
           <p>{error}</p>
         ) : (

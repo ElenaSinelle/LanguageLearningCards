@@ -7,10 +7,16 @@ import {
 
 export default function ContactsPage() {
   return (
-    <div className={`${styles.container} ${styles.contacts}`}>
+    <div
+      className={`${styles.container} ${styles.contacts}`}
+    >
       <h3 className={styles.contacts__title}>
         You can contact us at{" "}
-        <a href="https://github.com/ElenaSinelle" target="_blank">
+        <a
+          href="https://github.com/ElenaSinelle"
+          target="_blank"
+          rel="noreferrer"
+        >
           this page
         </a>
       </h3>
