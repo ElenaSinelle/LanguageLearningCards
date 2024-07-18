@@ -17,11 +17,15 @@ import { AuthContextProvider } from "./hoc/AuthContext";
 import { CounterContextProvider } from "./hoc/CounterContext";
 import { Provider } from "mobx-react";
 import { termsStore } from "./hoc/ObservableTermsStore";
+import { counterStore } from "./hoc/CounterContext";
 
 export default function App() {
   return (
     <AuthContextProvider>
-      <Provider termsStore={termsStore}>
+      <Provider
+        termsStore={termsStore}
+        counterStore={counterStore}
+      >
         <CounterContextProvider>
           <Router basename="/LanguageLearningCards">
             <Routes>

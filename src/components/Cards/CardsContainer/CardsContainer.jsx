@@ -4,15 +4,15 @@ import React, {
   useContext,
 } from "react";
 import styles from "./CardsContainer.module.scss";
-import { useCounter } from "../../../hoc/CounterContext";
 import Card from "../Card/Card";
 import PgntnButton from "../PgntnButton/PgntnButton";
 import { termsStoreContext } from "../../../hoc/ObservableTermsStore";
+import { counterStoreContext } from "../../../hoc/CounterContext";
 import { observer } from "mobx-react";
 
 const CardsContainer = observer(() => {
   const { terms } = useContext(termsStoreContext);
-  const { count } = useCounter();
+  const { count } = useContext(counterStoreContext);
 
   const userTermId = !localStorage.getItem("userTermId")
     ? 0

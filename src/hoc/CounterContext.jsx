@@ -1,23 +1,21 @@
-import { createContext, useState, useContext } from "react";
+import { makeAutoObservable } from "mobx";
+import { createContext } from "react";
 
-export const CounterContext = createContext(null);
+class ObservableCounterStore {
+  count = 0;
+  termset = new Set();
 
-export function CounterContextProvider({ children }) {
-  const [count, setCount] = useState(0);
-  const [termset, setTermset] = useState(new Set());
+  constructor() {
+    makeAutoObservable(this);
+    this.counter = this.counter.bind(this);
+  }
 
-  const counter = (id) => {
-    setTermset(termset.add(id));
-    setCount(termset.size);
+  counter = id => {
+    this.termset = this.termset.add(id);
+    this.count = this.termset.size;
   };
-
-  const value = { count, counter };
-
-  return (
-    <CounterContext.Provider value={value}>{children}</CounterContext.Provider>
-  );
 }
 
-export function useCounter() {
-  return useContext(CounterContext);
-}
+export const counterStore = new ObservableCounterStore();
+export const counterStoreContext =
+  createContext(counterStore);

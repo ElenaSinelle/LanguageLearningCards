@@ -1,10 +1,16 @@
-import React, { useEffect, useState, useRef } from "react";
+import React, {
+  useEffect,
+  useState,
+  useRef,
+  useContext,
+} from "react";
 import { Link } from "react-router-dom";
-import { useCounter } from "../../../hoc/CounterContext";
 import styles from "./Card.module.scss";
+import { observer } from "mobx-react";
+import { counterStoreContext } from "../../../hoc/CounterContext";
 
-function Card({ term, id, isVisible }) {
-  const { counter } = useCounter();
+const Card = observer(({ term, id, isVisible }) => {
+  const { counter } = useContext(counterStoreContext);
   const [translated, setTranslated] = useState(false);
   const translateBtn = useRef(null);
 
@@ -47,6 +53,6 @@ function Card({ term, id, isVisible }) {
       )}
     </div>
   );
-}
+});
 
 export default React.memo(Card);
