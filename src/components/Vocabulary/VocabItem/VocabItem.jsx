@@ -93,12 +93,19 @@ export default function VocabItem(props) {
   };
 
   const handleSave = () => {
-    if (validateFields(term)) {
+    const trimmedTerm = {
+      ...term,
+      english: term.english.trim(),
+      transcription: term.transcription.trim(),
+      russian: term.russian.trim(),
+      tags: term.tags.trim(),
+    };
+    if (validateFields(trimmedTerm)) {
       if (isNew) {
-        addTerm(term);
+        addTerm(trimmedTerm);
         setIsNew(false);
       } else {
-        updateTerm(term);
+        updateTerm(trimmedTerm);
       }
       setEditing(false);
     }
@@ -134,13 +141,17 @@ export default function VocabItem(props) {
         className={
           !term.english && !isValid ? styles.invalid : ""
         }
-        value={
+        value={term.english}
+        placeholder={
           !term.english && !isValid
             ? "you should enter a term"
-            : term.english
+            : ""
         }
         onChange={e =>
-          setTerm({ ...term, english: e.target.value })
+          setTerm({
+            ...term,
+            english: e.target.value.trimStart(),
+          })
         }
       />
       <VocabInput
@@ -149,15 +160,16 @@ export default function VocabItem(props) {
             ? styles.invalid
             : ""
         }
-        value={
+        value={term.transcription}
+        placeholder={
           !term.transcription && !isValid
             ? "you should enter transcription"
-            : term.transcription
+            : ""
         }
         onChange={e =>
           setTerm({
             ...term,
-            transcription: e.target.value,
+            transcription: e.target.value.trimStart(),
           })
         }
       />
@@ -165,10 +177,11 @@ export default function VocabItem(props) {
         className={
           !term.russian && !isValid ? styles.invalid : ""
         }
-        value={
+        value={term.russian.trimStart()}
+        placeholder={
           !term.russian && !isValid
             ? "you should enter translation"
-            : term.russian
+            : ""
         }
         onChange={e =>
           setTerm({ ...term, russian: e.target.value })
@@ -178,10 +191,11 @@ export default function VocabItem(props) {
         className={
           !term.tags && !isValid ? styles.invalid : ""
         }
-        value={
+        value={term.tags.trimStart()}
+        placeholder={
           !term.tags && !isValid
             ? "you should enter category"
-            : term.tags
+            : ""
         }
         onChange={e =>
           setTerm({ ...term, tags: e.target.value })
