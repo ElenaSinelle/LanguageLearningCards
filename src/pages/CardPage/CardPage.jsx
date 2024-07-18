@@ -5,7 +5,7 @@ import {
   GoBackButton,
   GoHomeButton,
 } from "../../components/NavigateButtons/NavigateButtons";
-import { termsStoreContext } from "../../hoc/ObservableTermsStore";
+import { termsStoreContext } from "../../stores/ObservableTermsStore";
 import { observer } from "mobx-react";
 
 const CardPage = observer(() => {

@@ -1,7 +1,7 @@
 import styles from "./LoginPage.module.scss";
 import { useLocation, useNavigate } from "react-router-dom";
 import { useContext, useEffect } from "react";
-import { authStoreProvider } from "../../hoc/ObservableAuthStore";
+import { authStoreProvider } from "../../stores/ObservableAuthStore";
 import { observer } from "mobx-react";
 
 const LoginPage = observer(() => {

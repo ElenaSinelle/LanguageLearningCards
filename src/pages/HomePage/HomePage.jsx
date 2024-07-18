@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import styles from "./HomePage.module.scss";
-import { authStoreProvider } from "../../hoc/ObservableAuthStore";
+import { authStoreProvider } from "../../stores/ObservableAuthStore";
 import { observer } from "mobx-react";
 import { useContext } from "react";
 

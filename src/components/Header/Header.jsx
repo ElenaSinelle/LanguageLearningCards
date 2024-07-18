@@ -2,7 +2,7 @@ import React from "react";
 import { NavLink } from "react-router-dom";
 import styles from "./Header.module.scss";
 import Logo from "../Logo/Logo";
-import { authStoreProvider } from "../../hoc/ObservableAuthStore";
+import { authStoreProvider } from "../../stores/ObservableAuthStore";
 import { observer } from "mobx-react";
 import { useContext } from "react";
 

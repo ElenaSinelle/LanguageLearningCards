@@ -12,11 +12,11 @@ import CardsPage from "./pages/CardsPage/CardsPage";
 import CardPage from "./pages/CardPage/CardPage";
 import VocabularyPage from "./pages/VocabularyPage/VocabularyPage";
 import NotFoundPage from "./pages/NotFoundPage/NotFoundPage";
-import RequireAuth from "./hoc/RequireAuth";
+import RequireAuth from "./stores/RequireAuth";
 import { Provider } from "mobx-react";
-import { termsStore } from "./hoc/ObservableTermsStore";
-import { counterStore } from "./hoc/ObservableCounterStore";
-import { authStore } from "./hoc/ObservableAuthStore";
+import { termsStore } from "./stores/ObservableTermsStore";
+import { counterStore } from "./stores/ObservableCounterStore";
+import { authStore } from "./stores/ObservableAuthStore";
 
 export default function App() {
   return (

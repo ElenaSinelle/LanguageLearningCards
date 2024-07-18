@@ -4,14 +4,13 @@ import React, {
   useContext,
 } from "react";
 import { Link } from "react-router-dom";
-// import { useTerms } from "../../../hoc/TermsContext";
 import VocabButton from "../VocabButton/VocabButton";
 import VocabInput from "../VocabInput/VocabInput";
 import styles from "../Vocabulary.module.scss";
 import themePink from "../../../commonStyles/themes/themePink.module.scss";
 import themeBlue from "../../../commonStyles/themes/themeBlue.module.scss";
 import themeGreen from "../../../commonStyles/themes/themeGreen.module.scss";
-import { termsStoreContext } from "../../../hoc/ObservableTermsStore";
+import { termsStoreContext } from "../../../stores/ObservableTermsStore";
 import { observer } from "mobx-react";
 
 const themes = [themePink, themeBlue, themeGreen];

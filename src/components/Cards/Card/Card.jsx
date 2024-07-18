@@ -7,7 +7,7 @@ import React, {
 import { Link } from "react-router-dom";
 import styles from "./Card.module.scss";
 import { observer } from "mobx-react";
-import { counterStoreContext } from "../../../hoc/ObservableCounterStore";
+import { counterStoreContext } from "../../../stores/ObservableCounterStore";
 
 const Card = observer(({ term, id, isVisible }) => {
   const { counter } = useContext(counterStoreContext);

@@ -3,7 +3,7 @@ import styles from "./Vocabulary.module.scss";
 import VocabItem from "./VocabItem/VocabItem";
 import VocabHeader from "./VocabHeader/VocabHeader";
 import Loader from "../Loader/Loader";
-import { termsStoreContext } from "../../hoc/ObservableTermsStore";
+import { termsStoreContext } from "../../stores/ObservableTermsStore";
 import { observer } from "mobx-react";
 
 const VocabularyComponent = observer(
