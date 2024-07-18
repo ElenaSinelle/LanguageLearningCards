@@ -14,10 +14,9 @@ import VocabularyPage from "./pages/VocabularyPage/VocabularyPage";
 import NotFoundPage from "./pages/NotFoundPage/NotFoundPage";
 import RequireAuth from "./hoc/RequireAuth";
 import { AuthContextProvider } from "./hoc/AuthContext";
-import { CounterContextProvider } from "./hoc/CounterContext";
 import { Provider } from "mobx-react";
 import { termsStore } from "./hoc/ObservableTermsStore";
-import { counterStore } from "./hoc/CounterContext";
+import { counterStore } from "./hoc/ObservableCounterStore";
 
 export default function App() {
   return (
@@ -26,63 +25,56 @@ export default function App() {
         termsStore={termsStore}
         counterStore={counterStore}
       >
-        <CounterContextProvider>
-          <Router basename="/LanguageLearningCards">
-            <Routes>
-              <Route path="/" element={<Layout />}>
-                <Route index element={<HomePage />} />
-                <Route
-                  path="login"
-                  element={<LoginPage />}
-                />
-                <Route
-                  path="contacts"
-                  element={
-                    <RequireAuth>
-                      <ContactsPage />
-                    </RequireAuth>
-                  }
-                ></Route>
-                <Route
-                  path="cards"
-                  element={
-                    <RequireAuth>
-                      <CardsPage />
-                    </RequireAuth>
-                  }
-                />
-                <Route
-                  path="cards/:id"
-                  element={
-                    <RequireAuth>
-                      <CardPage />
-                    </RequireAuth>
-                  }
-                />
-                <Route
-                  path="vocabulary"
-                  element={
-                    <RequireAuth>
-                      <VocabularyPage />
-                    </RequireAuth>
-                  }
-                />
-                <Route
-                  path="logout"
-                  element={
-                    <RequireAuth>
-                      <LogoutPage />
-                    </RequireAuth>
-                  }
-                />
-                <Route
-                  path="*"
-                  element={<NotFoundPage />}
-                />
-              </Route>
-            </Routes>
-          </Router>
-        </CounterContextProvider>
+        >
+        <Router basename="/LanguageLearningCards">
+          <Routes>
+            <Route path="/" element={<Layout />}>
+              <Route index element={<HomePage />} />
+              <Route path="login" element={<LoginPage />} />
+              <Route
+                path="contacts"
+                element={
+                  <RequireAuth>
+                    <ContactsPage />
+                  </RequireAuth>
+                }
+              ></Route>
+              <Route
+                path="cards"
+                element={
+                  <RequireAuth>
+                    <CardsPage />
+                  </RequireAuth>
+                }
+              />
+              <Route
+                path="cards/:id"
+                element={
+                  <RequireAuth>
+                    <CardPage />
+                  </RequireAuth>
+                }
+              />
+              <Route
+                path="vocabulary"
+                element={
+                  <RequireAuth>
+                    <VocabularyPage />
+                  </RequireAuth>
+                }
+              />
+              <Route
+                path="logout"
+                element={
+                  <RequireAuth>
+                    <LogoutPage />
+                  </RequireAuth>
+                }
+              />
+              <Route path="*" element={<NotFoundPage />} />
+            </Route>
+          </Routes>
+        </Router>
       </Provider>
     </AuthContextProvider>
   );

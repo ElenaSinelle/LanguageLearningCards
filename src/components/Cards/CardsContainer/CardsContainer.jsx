@@ -7,7 +7,7 @@ import styles from "./CardsContainer.module.scss";
 import Card from "../Card/Card";
 import PgntnButton from "../PgntnButton/PgntnButton";
 import { termsStoreContext } from "../../../hoc/ObservableTermsStore";
-import { counterStoreContext } from "../../../hoc/CounterContext";
+import { counterStoreContext } from "../../../hoc/ObservableCounterStore";
 import { observer } from "mobx-react";
 
 const CardsContainer = observer(() => {
