@@ -1,21 +1,23 @@
 import styles from "./LoginPage.module.scss";
 import { useLocation, useNavigate } from "react-router-dom";
+import { useContext, useEffect } from "react";
+import { authStoreProvider } from "../../hoc/ObservableAuthStore";
+import { observer } from "mobx-react";
 
-import { useAuth } from "../../hoc/AuthContext";
-import { useEffect } from "react";
-
-export default function LoginPage() {
+const LoginPage = observer(() => {
   const location = useLocation();
   const navigate = useNavigate();
-  const { user, logIn } = useAuth();
+  const { user, logIn } = useContext(authStoreProvider);
 
   const fromPage = location.state?.from?.pathname || "/";
 
-  const loginHandler = (event) => {
+  const loginHandler = event => {
     event.preventDefault();
     const form = event.target;
     const user = form.username.value;
-    logIn(user, () => navigate(fromPage, { replace: true }));
+    logIn(user, () =>
+      navigate(fromPage, { replace: true }),
+    );
   };
 
   useEffect(() => {
@@ -39,10 +41,17 @@ export default function LoginPage() {
         >
           <label>
             User Name:{" "}
-            <input type="text" placeholder="user name" name="username" />
+            <input
+              type="text"
+              placeholder="user name"
+              name="username"
+            />
           </label>
 
-          <button className={styles.login__form_btn} type="submit">
+          <button
+            className={styles.login__form_btn}
+            type="submit"
+          >
             Log In
           </button>
         </form>
@@ -53,4 +62,6 @@ export default function LoginPage() {
       </div>
     </div>
   );
-}
+});
+
+export default LoginPage;

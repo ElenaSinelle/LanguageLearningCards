@@ -1,13 +1,14 @@
 import styles from "./LogoutPage.module.scss";
 import { useNavigate } from "react-router-dom";
+import { authStoreProvider } from "../../hoc/ObservableAuthStore";
+import { observer } from "mobx-react";
+import { useContext } from "react";
 
-import { useAuth } from "../../hoc/AuthContext";
-
-export default function LogoutPage() {
+const LogoutPage = observer(() => {
   const navigate = useNavigate();
-  const { logOut } = useAuth();
+  const { logOut } = useContext(authStoreProvider);
 
-  const logoutHandler = (event) => {
+  const logoutHandler = event => {
     event.preventDefault();
     logOut(() => navigate("/"));
   };
@@ -15,9 +16,12 @@ export default function LogoutPage() {
   return (
     <div className={styles.container}>
       <div className={styles.logout}>
-        <h2 className={styles.logout__title}>Log Out Page</h2>
+        <h2 className={styles.logout__title}>
+          Log Out Page
+        </h2>
         <p className={styles.logout__hint}>
-          We were happy to study together. You are welcome to come back!
+          We were happy to study together. You are welcome
+          to come back!
         </p>
 
         <form
@@ -25,11 +29,16 @@ export default function LogoutPage() {
           name="logout"
           onSubmit={logoutHandler}
         >
-          <button className={styles.logout__form_btn} type="submit">
+          <button
+            className={styles.logout__form_btn}
+            type="submit"
+          >
             Log Out
           </button>
         </form>
       </div>
     </div>
   );
-}
+});
+
+export default LogoutPage;

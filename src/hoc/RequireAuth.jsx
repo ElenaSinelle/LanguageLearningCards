@@ -1,13 +1,19 @@
 import { useLocation, Navigate } from "react-router-dom";
-import { useAuth } from "./AuthContext";
+import { authStoreProvider } from "./ObservableAuthStore";
+import { useContext } from "react";
+import { observer } from "mobx-react";
 
-export default function RequireAuth({ children }) {
+const RequireAuth = observer(({ children }) => {
   const location = useLocation();
-  const { user } = useAuth();
+  const { user } = useContext(authStoreProvider);
 
   if (!user) {
-    return <Navigate to="/login" state={{ from: location }} />;
+    return (
+      <Navigate to="/login" state={{ from: location }} />
+    );
   }
 
   return children;
-}
+});
+
+export default RequireAuth;
