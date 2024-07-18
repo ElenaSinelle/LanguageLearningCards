@@ -1,16 +1,22 @@
-import React, { useState, useEffect } from "react";
+import React, {
+  useState,
+  useEffect,
+  useContext,
+} from "react";
 import { Link } from "react-router-dom";
-import { useTerms } from "../../../hoc/TermsContext";
+// import { useTerms } from "../../../hoc/TermsContext";
 import VocabButton from "../VocabButton/VocabButton";
 import VocabInput from "../VocabInput/VocabInput";
 import styles from "../Vocabulary.module.scss";
 import themePink from "../../../commonStyles/themes/themePink.module.scss";
 import themeBlue from "../../../commonStyles/themes/themeBlue.module.scss";
 import themeGreen from "../../../commonStyles/themes/themeGreen.module.scss";
+import { termsStoreContext } from "../../../hoc/ObservableTermsStore";
+import { observer } from "mobx-react";
 
 const themes = [themePink, themeBlue, themeGreen];
 
-export default function VocabItem(props) {
+const VocabItem = observer(props => {
   const {
     id,
     english,
@@ -21,7 +27,8 @@ export default function VocabItem(props) {
     setIsNew,
   } = props;
   const { terms, removeTerm, updateTerm, addTerm } =
-    useTerms();
+    useContext(termsStoreContext);
+
   const [editing, setEditing] = useState(isNew || false);
   const [isValid, setIsValid] = useState(true);
   const [initialTerm, setInitialTerm] = useState({
@@ -258,4 +265,6 @@ export default function VocabItem(props) {
       </div>
     </div>
   );
-}
+});
+
+export default VocabItem;

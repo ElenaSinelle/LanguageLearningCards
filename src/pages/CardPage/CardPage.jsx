@@ -1,19 +1,22 @@
 import { useParams } from "react-router-dom";
-import { useState, useEffect } from "react";
-import { useTerms } from "../../hoc/TermsContext";
+import { useState, useEffect, useContext } from "react";
 import styles from "./CardPage.module.scss";
 import {
   GoBackButton,
   GoHomeButton,
 } from "../../components/NavigateButtons/NavigateButtons";
+import { termsStoreContext } from "../../hoc/ObservableTermsStore";
+import { observer } from "mobx-react";
 
-export default function CardPage() {
+const CardPage = observer(() => {
   const { id } = useParams();
-  const { terms } = useTerms();
+  const { terms } = useContext(termsStoreContext);
   const [term, setTerm] = useState(null);
 
   useEffect(() => {
-    const foundTerm = terms.find((term) => term.id.toString() === id);
+    const foundTerm = terms.find(
+      term => term.id.toString() === id,
+    );
     setTerm(foundTerm);
   }, [terms, id]);
 
@@ -21,8 +24,8 @@ export default function CardPage() {
     return (
       <div className={styles.container}>
         <h3>
-          We are sorry, there is no such word in our dictionary. We will add it
-          later.
+          We are sorry, there is no such word in our
+          dictionary. We will add it later.
         </h3>
       </div>
     );
@@ -38,25 +41,33 @@ export default function CardPage() {
         <div className={styles.cardPage__item}>
           <p>
             English:{" "}
-            <span className={styles.cardPage__item_description}>
+            <span
+              className={styles.cardPage__item_description}
+            >
               {term.english}
             </span>
           </p>
           <p>
             Transcription:{" "}
-            <span className={styles.cardPage__item_description}>
+            <span
+              className={styles.cardPage__item_description}
+            >
               {term.transcription}
             </span>
           </p>
           <p>
             Translation into Russian:{" "}
-            <span className={styles.cardPage__item_description}>
+            <span
+              className={styles.cardPage__item_description}
+            >
               {term.russian}
             </span>
           </p>
           <p>
             The word belongs to the category:{" "}
-            <span className={styles.cardPage__item_description}>
+            <span
+              className={styles.cardPage__item_description}
+            >
               {term.tags}
             </span>
           </p>
@@ -66,4 +77,6 @@ export default function CardPage() {
       <GoHomeButton />
     </div>
   );
-}
+});
+
+export default CardPage;

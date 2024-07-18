@@ -8,7 +8,7 @@ function Card({ term, id, isVisible }) {
   const [translated, setTranslated] = useState(false);
   const translateBtn = useRef(null);
 
-  const handleTranslation = (id) => {
+  const handleTranslation = id => {
     setTranslated(true);
     counter(id);
   };
@@ -26,7 +26,10 @@ function Card({ term, id, isVisible }) {
     <div id={id} className={styles.card}>
       <h4 className={styles.card__cardTitle}>Term</h4>
 
-      <Link to={`/cards/${id}`} className={styles.card__term}>
+      <Link
+        to={`/cards/${id}`}
+        className={styles.card__term}
+      >
         {term.english}
       </Link>
       {!translated ? (
@@ -34,9 +37,13 @@ function Card({ term, id, isVisible }) {
           className={styles.card__showTranslation}
           onClick={() => handleTranslation(id)}
           ref={translateBtn}
-        >Show translation</button>
+        >
+          Show translation
+        </button>
       ) : (
-        <div className={styles.card__translation}>{term.russian}</div>
+        <div className={styles.card__translation}>
+          {term.russian}
+        </div>
       )}
     </div>
   );
